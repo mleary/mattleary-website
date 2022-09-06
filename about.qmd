@@ -1,0 +1,19 @@
+---
+title: "Matt Leary"
+image: lego-profile.jpeg
+about: 
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      url: "https://github.com/mleary"
+    - icon: linkedin
+      text: LinkedIn
+      url: 'https://www.linkedin.com/in/mbleary'
+    - icon: file-text
+      text: Resume
+      url: 'https://mleary.github.io/resume/'
+      
+---
+
+After 10+ years working in public relations / government services, I moved into data science after realizing I preferred working with data to summarizing it. I am still expanding my knowledge of all things data & tech, and find myself focused on building data science solutions AND learning how we can deploy and integrate them into other applications. I started coding in `R`, but have slowly adopt `Python` as well.  

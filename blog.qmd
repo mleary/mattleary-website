@@ -1,0 +1,15 @@
+---
+title: "Blog"
+subtitle: A random assortment of thoughts and explorations
+listing:
+  feed: true
+  contents: content
+  sort: "date desc"
+  type: grid
+  grid-columns: 3
+  image-height: 200px
+  categories: true
+page-layout: full
+title-block-banner: true
+image: lego-profile.jpeg
+---
