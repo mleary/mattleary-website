@@ -1,11 +1,17 @@
 ---
-title: "Clever title here"
+title: "Welcome to mattleary.com"
+page-layout: full
+title-block-banner: true
+image: lego-profile.jpeg
+toc: false
 ---
 
-This is a Quarto website.
+## Welcome!
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+I am a data scientist, Tottenham Hotspur fan, Veteran, and proud minivan
+owner. I created this website to share my work and help future Matt
+find code snippets and remember how I did things.
 
-```{r}
-1 + 1
-```
+I built this site with [quarto](https://quarto.org/), and have used it as a chance to revamp an [older website](https://github.com/mleary/blogdown) built with Hugo & [{blogdown}](https://bookdown.org)
+
+For information on me, feel free to visit the [about_me](about.html) section to get a brief bio and find links to my LinkedIn, Github page, and current resume.

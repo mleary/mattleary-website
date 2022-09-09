@@ -1,15 +1,16 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "Clever title here"
+  title: "matt_leary"
   navbar:
     background: "#132257"
     right: 
-    - href: about.html
-      text: About me
     - href: blog.html
-      text: Blog
+      text: blog
+    - href: about.html
+      text: about_me
     - icon: github
       aria-label: github
       href: https://github.com/mleary/mattleary-website

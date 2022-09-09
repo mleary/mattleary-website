@@ -1,6 +1,5 @@
 ---
-title: "Blog"
-subtitle: A random assortment of thoughts and explorations
+title: "blog"
 listing:
   feed: true
   contents: content
