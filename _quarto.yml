@@ -8,7 +8,9 @@ website:
     background: "#132257"
     right: 
     - href: blog.html
-      text: blog
+      text: my_blog
+    - href: resources.html
+      text: resources
     - href: about.html
       text: about_me
     - icon: github
