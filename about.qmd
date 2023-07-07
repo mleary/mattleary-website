@@ -2,7 +2,7 @@
 title-block-banner: false
 image: lego-profile.jpeg
 about: 
-  template: jolla
+  template: trestles
   links:
     - icon: github
       text: Github
@@ -19,6 +19,8 @@ about:
 
 Hi!
 
-I am a data scientist working in the insurance industry, and I enjoy building tools that help people work more efficiently. Outside of work, I am the proud father of two tiny humans and an avid Tottenham Hotspur fan. I previously worked in public policy/public relations, and spent a few years in the Army\*.
+I am a data scientist working in the insurance industry and I enjoy building tools that help people work more efficiently. I work regularly with R and Python, but R will always be my preferred language for analysis and machine learning. I am frequently working with SQL and Git (DevOps or Github), and have experience with cloud computing such as AWS, Azure, and Databricks.
+
+Outside of work, I am the proud father of two tiny humans and an avid Tottenham Hotspur fan. I previously worked in public policy/public relations, and spent a few years in the Army\*.
 
 \*Fun fact, you run and workout a LOT less when no one is yelling at you to do so.
