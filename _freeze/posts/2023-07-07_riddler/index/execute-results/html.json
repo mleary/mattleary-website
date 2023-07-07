@@ -1,0 +1,14 @@
+{
+  "hash": "751e7f5f682b213a8bd14cbd4714ab12",
+  "result": {
+    "markdown": "```         \n---\ntitle: \"Riddler\"\ndescription: \"Post description\"\nauthor: \"Fizz McPhee\"\ndate: \"7/07/2023\"\nimage: riddler-preview.png\n---\n```\n\n## \n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(\"test\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"test\"\n```\n:::\n:::\n\n\nSeeing why the format seems off\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

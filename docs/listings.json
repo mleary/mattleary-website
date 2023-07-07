@@ -1,6 +1,8 @@
 [
   {
-    "listing": "/blog.html",
-    "items": []
+    "listing": "/posts.html",
+    "items": [
+      "/posts/2023-07-07_moving-to-quarto/index.html"
+    ]
   }
 ]

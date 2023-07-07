@@ -1,0 +1,14 @@
+{
+  "hash": "3295ce3de693719989c993f64d52768b",
+  "result": {
+    "markdown": "---\ntitle: \"Moving to a Quarto website\"\nauthor: \"Matt Leary\"\ndate: \"2023-07-07\"\ncategories: [news, code]\nimage: \"quarto-image.jpg\"\n---\n\n\nThis is a post with executable code.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

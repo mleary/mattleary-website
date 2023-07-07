@@ -7,14 +7,21 @@ website:
   navbar:
     background: "#132257"
     right: 
-    - href: blog.html
-      text: blog
+    - href: posts.html
+      text: posts
     - href: about.html
       text: about_me
     - icon: github
       aria-label: github
       href: https://github.com/mleary/mattleary-website
-
+  page-footer:
+    left: "Blog made by Matt Leary with [Quarto](https://quarto.org/). License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
+    right: 
+      - icon: github
+        aria-label: github
+        href: https://github.com/mleary/mattleary-website
+      - icon: envelope
+        href: mailto:matt.leary@proton.me
     
 format:
   html:
