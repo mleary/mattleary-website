@@ -1,0 +1,19 @@
+---
+title: "Moving to a Quarto website"
+author: "Matt Leary"
+date: "2023-07-07"
+categories: [quarto]
+image: "quarto-image.jpg"
+---
+
+After many months (years?) of not really touching my personal website, I am working to update my website and *truly* delve into using [quarto](https://quarto.org/) for analysis and publication. This initial post will be a short summary of my efforts to get started, document some of the resources I found and used, and a starting point for what will \*hopefully\* become a regularly updated post.
+
+### Lessons learned
+
+-   I had an existing template, after a few hours I was able to follow Sam Csik tutorial (below) to help me create blog section on the website.
+
+### Resources
+
+https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/
+
+https://beamilz.com/
