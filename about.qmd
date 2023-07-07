@@ -1,5 +1,4 @@
 ---
-title: "about_me"
 title-block-banner: false
 image: lego-profile.jpeg
 about: 
@@ -15,6 +14,8 @@ about:
       text: Resume
       url: 'https://mleary.github.io/resume/'
 ---
+
+# about_me
 
 Hi!
 

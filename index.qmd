@@ -1,5 +1,4 @@
 ---
-title: "Welcome to mattleary.com"
 page-layout: full
 title-block-banner: true
 image: lego-profile.jpeg
