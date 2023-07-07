@@ -2,14 +2,14 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome to mattleary.com",
+    "title": "matt_leary",
     "section": "",
     "text": "I am a data scientist, Tottenham Hotspur fan, Veteran, and proud minivan owner. I created this website to share my work and help future Matt find code snippets and remember how I did things.\nI built this site with quarto, and have used it as a chance to revamp an older website built with Hugo & {blogdown}\nFor information on me, feel free to visit the about_me section to get a brief bio and find links to my LinkedIn, Github page, and current resume."
   },
   {
     "objectID": "index.html#welcome",
     "href": "index.html#welcome",
-    "title": "Welcome to mattleary.com",
+    "title": "matt_leary",
     "section": "",
     "text": "I am a data scientist, Tottenham Hotspur fan, Veteran, and proud minivan owner. I created this website to share my work and help future Matt find code snippets and remember how I did things.\nI built this site with quarto, and have used it as a chance to revamp an older website built with Hugo & {blogdown}\nFor information on me, feel free to visit the about_me section to get a brief bio and find links to my LinkedIn, Github page, and current resume."
   },
@@ -25,6 +25,6 @@
     "href": "about.html",
     "title": "about_me",
     "section": "",
-    "text": "Hi!\nI am a data scientist working in the insurance industry, and I enjoy building tools that help people work more efficiently. Outside of work, I am the proud father of two tiny humans and an avid Tottenham Hotspur fan. I previously worked in public policy/public relations, and spent a few years in the Army*.\n*Fun fact, you run and workout a LOT less when no one is yelling at you to do so."
+    "text": "about_me\nHi!\nI am a data scientist working in the insurance industry, and I enjoy building tools that help people work more efficiently. Outside of work, I am the proud father of two tiny humans and an avid Tottenham Hotspur fan. I previously worked in public policy/public relations, and spent a few years in the Army*.\n*Fun fact, you run and workout a LOT less when no one is yelling at you to do so."
   }
 ]

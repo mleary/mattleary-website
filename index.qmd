@@ -1,12 +1,11 @@
 ---
-title: "Welcome to mattleary.com"
 page-layout: full
 title-block-banner: true
 image: lego-profile.jpeg
 toc: false
 ---
 
-## Welcome!
+## Welcome to mattleary.com!
 
 I am a data scientist, Tottenham Hotspur fan, Veteran, and proud minivan owner. I created this website to share my work and help future Matt find code snippets and remember how I did things.
 
