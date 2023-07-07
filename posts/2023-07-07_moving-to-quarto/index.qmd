@@ -10,10 +10,16 @@ After many months (years?) of not really touching my personal website, I am work
 
 ### Lessons learned
 
--   I had an existing template, after a few hours I was able to follow Sam Csik tutorial (below) to help me create blog section on the website.
+-   I had an existing template, after a few hours I was able to follow Sam Csik tutorial (to help me create blog section on the website.
+    -   [Used this tutorial](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)
+-   Using a custom domain is relatively simple, but it took some configuring to get it right.
+    -   [Github docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+        -   Used the section entitled **Configuring an apex domain**
+    -   [Random YouTube video that helped visual the process](https://www.youtube.com/watch?v=dbgEWWBvIxY)
+-   Realized I might want to setup a Github Actions workflow instead of rendering locally. Not sure on that yet.
+-   Consolidating
+    -   I have created several other websites with Github. Debating if I want to link to those, move that content into this website, or refactor those as quarto webpages.
 
-### Resources
+### Additional resources used
 
-https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/
-
-https://beamilz.com/
+-   <https://beamilz.com/>
