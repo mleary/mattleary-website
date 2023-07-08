@@ -2,14 +2,13 @@ project:
   type: website
   output-dir: docs
 website:
+  favicon: images/favicon.png
   title: "matt_leary"
   navbar:
     background: "#132257"
     right: 
     - href: posts.html
       text: posts
-    - href: about.html
-      text: about_me
     - icon: github
       aria-label: github
       href: https://github.com/mleary/mattleary-website
