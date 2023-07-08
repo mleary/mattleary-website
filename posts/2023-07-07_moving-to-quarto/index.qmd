@@ -1,8 +1,8 @@
 ---
 title: "Moving to a Quarto website"
-author: "Matt Leary"
+description: "Updating my previous {blogdown} website with RStudio and Quarto (an open-source scientific and technical publishing system."
 date: "2023-07-07"
-categories: [quarto]
+categories: [Quarto, R]
 image: "quarto-image.jpg"
 ---
 
@@ -17,6 +17,8 @@ After many months (years?) of not really touching my personal website, I am work
         -   Used the section entitled **Configuring an apex domain**
     -   [Random YouTube video that helped visual the process](https://www.youtube.com/watch?v=dbgEWWBvIxY)
 -   Realized I might want to setup a Github Actions workflow instead of rendering locally. Not sure on that yet.
+-   Bring over old .Rmd files used in my previous {blogdown} format was clunky
+    -   Not sure if it was simply a copy paste issue, but I took an old post and tried to move it over. Quarto seemed to have some new syntax and it proved to be a little bit of a hassle. Again, this might have been user error on the first go round but I might just focus on starting fresh moving forward.
 -   Consolidating
     -   I have created several other websites with Github. Debating if I want to link to those, move that content into this website, or refactor those as quarto webpages.
 
