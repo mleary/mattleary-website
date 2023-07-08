@@ -6,3 +6,9 @@ freeze: true
 
 # Enable banner style title blocks
 title-block-banner: true
+
+# add me as author by default
+author: 'Matt Leary'
+
+# format
+page-layout: article

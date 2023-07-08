@@ -15,8 +15,6 @@ about:
       url: 'https://mleary.github.io/resume/'
 ---
 
-# about_me
-
 Hi!
 
 I am a data scientist working in the insurance industry and I enjoy building tools that help people work more efficiently. I work regularly with R and Python, but R will always be my preferred language for analysis and machine learning. I am frequently working with SQL and Git (DevOps or Github), and have experience with cloud computing such as AWS, Azure, and Databricks.

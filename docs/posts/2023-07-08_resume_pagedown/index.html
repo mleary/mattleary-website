@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Matt Leary">
-<meta name="dcterms.date" content="2023-07-07">
-<meta name="description" content="Updating my previous {blogdown} website with RStudio and Quarto (an open-source scientific and technical publishing system.">
+<meta name="dcterms.date" content="2023-07-08">
+<meta name="description" content="Creating a daynamic resume I can easily update and share with R, {pagedown}, and some basic {rmarkdown} functionality,">
 
-<title>matt_leary - Moving to a Quarto website</title>
+<title>matt_leary - Generating my resume with {pagedown}</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -108,15 +142,15 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Moving to a Quarto website</h1>
+      <h1 class="title">Generating my resume with {pagedown}</h1>
                   <div>
         <div class="description">
-          Updating my previous {blogdown} website with RStudio and Quarto (an open-source scientific and technical publishing system.
+          Creating a daynamic resume I can easily update and share with R, {pagedown}, and some basic {rmarkdown} functionality,
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">Quarto</div>
                 <div class="quarto-category">R</div>
+                <div class="quarto-category">pagedown</div>
               </div>
                   </div>
   </div>
@@ -134,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">July 7, 2023</p>
+        <p class="date">July 8, 2023</p>
       </div>
     </div>
     
@@ -150,8 +184,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#lessons-learned" id="toc-lessons-learned" class="nav-link active" data-scroll-target="#lessons-learned">Lessons learned</a></li>
-  <li><a href="#additional-resources-used" id="toc-additional-resources-used" class="nav-link" data-scroll-target="#additional-resources-used">Additional resources used</a></li>
+  <li><a href="#refreshing-an-old-post" id="toc-refreshing-an-old-post" class="nav-link active" data-scroll-target="#refreshing-an-old-post">Refreshing an old Post</a></li>
+  <li><a href="#intent" id="toc-intent" class="nav-link" data-scroll-target="#intent">Intent</a></li>
+  <li><a href="#creating-my-custom-resume" id="toc-creating-my-custom-resume" class="nav-link" data-scroll-target="#creating-my-custom-resume">Creating my custom resume</a></li>
+  <li><a href="#main-efforts" id="toc-main-efforts" class="nav-link" data-scroll-target="#main-efforts">Main efforts</a>
+  <ul class="collapse">
+  <li><a href="#updating-the-css" id="toc-updating-the-css" class="nav-link" data-scroll-target="#updating-the-css">Updating the CSS</a></li>
+  <li><a href="#creating-an-excel-file-for-data" id="toc-creating-an-excel-file-for-data" class="nav-link" data-scroll-target="#creating-an-excel-file-for-data">Creating an Excel file for data</a></li>
+  <li><a href="#producing-multiple-versions" id="toc-producing-multiple-versions" class="nav-link" data-scroll-target="#producing-multiple-versions">Producing multiple versions</a></li>
+  </ul></li>
+  <li><a href="#lessons-learned" id="toc-lessons-learned" class="nav-link" data-scroll-target="#lessons-learned">Lessons Learned</a></li>
   </ul>
 </nav>
     </div>
@@ -161,38 +203,86 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>After many months (years?) of not really touching my personal website, I am working to update my website and <em>truly</em> delve into using <a href="https://quarto.org/">quarto</a> for analysis and publication. This initial post will be a short summary of my efforts to get started, document some of the resources I found and used, and a starting point for what will *hopefully* become a regularly updated post.</p>
-<section id="lessons-learned" class="level3">
-<h3 class="anchored" data-anchor-id="lessons-learned">Lessons learned</h3>
-<ul>
-<li>I had an existing template, after a few hours I was able to follow Sam Csik tutorial (to help me create blog section on the website.
-<ul>
-<li><a href="https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/">Used this tutorial</a></li>
-</ul></li>
-<li>Using a custom domain is relatively simple, but it took some configuring to get it right.
-<ul>
-<li><a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">Github docs</a>
-<ul>
-<li>Used the section entitled <strong>Configuring an apex domain</strong></li>
-</ul></li>
-<li><a href="https://www.youtube.com/watch?v=dbgEWWBvIxY">Random YouTube video that helped visual the process</a></li>
-</ul></li>
-<li>Realized I might want to setup a Github Actions workflow instead of rendering locally. Not sure on that yet.</li>
-<li>Bring over old .Rmd files used in my previous {blogdown} format was clunky
-<ul>
-<li>Not sure if it was simply a copy paste issue, but I took an old post and tried to move it over. Quarto seemed to have some new syntax and it proved to be a little bit of a hassle. Again, this might have been user error on the first go round but I might just focus on starting fresh moving forward.</li>
-</ul></li>
-<li>Consolidating
-<ul>
-<li>I have created several other websites with Github. Debating if I want to link to those, move that content into this website, or refactor those as quarto webpages.</li>
-</ul></li>
-</ul>
+<section id="refreshing-an-old-post" class="level2">
+<h2 class="anchored" data-anchor-id="refreshing-an-old-post">Refreshing an old Post</h2>
+<p><strong>I took an old post generated on my previous {blogdown} website and ported it over to quarto. I made slight updates to line it up with current format, but otherwise tried to just reuse the old material found <a href="https://github.com/mleary/blogdown/blob/main/content/blog/2020-01-04-pagedown_resume.Rmd">here</a>.</strong></p>
+<hr>
+<p>Yihui Xie &amp; Romain Lesur’s {pagedown} package allows users to create paged HTML documents that can be easily printed as PDFs. This includes RMarkdown templates that let you create letters, business cards, and most importantly resumes. I previously explored using {pagedown} for my resume and was impressed with the unique look it provided. That said, I never actually finished my exploration and I recently wanted to go back to {pagedown} and create a new resume.</p>
 </section>
-<section id="additional-resources-used" class="level3">
-<h3 class="anchored" data-anchor-id="additional-resources-used">Additional resources used</h3>
+<section id="intent" class="level2">
+<h2 class="anchored" data-anchor-id="intent">Intent</h2>
+<p>I had four main goals with this project:</p>
 <ul>
-<li><a href="https://beamilz.com/" class="uri">https://beamilz.com/</a></li>
+<li><p>Create a resume format that was unique but not overly “flashy”</p></li>
+<li><p>Modify pagedown’s base styling to work on my understanding of CSS</p></li>
+<li><p>Create two versions, an <a href="https://mleary.github.io/resume/" target="_blank">HTML document</a> for the web and a <a href="https://github.com/mleary/resume/blob/main/mleary_resume.pdf" target="_blank">basic pdf</a> for printing</p></li>
+<li><p>Develop a process that made it easy to update my resume periodically <a href="https://github.com/mleary/resume" target="_blank">(see the repo here)</a></p></li>
 </ul>
+<p>**Acknowledgement: Shout out to Nick Strayer, whose code was the basis for my format. I heavily borrowed from his code and approach. See his resume <a href="http://nickstrayer.me/cv/">here</a></p>
+</section>
+<section id="creating-my-custom-resume" class="level2">
+<h2 class="anchored" data-anchor-id="creating-my-custom-resume">Creating my custom resume</h2>
+<p>After some quick research on {pagedown} examples, I stumbled upon Nick Strayer’s resume. I liked the subtle changes he made to the base {pagedown::html_resume}, and decided to leverage his format &amp; approach. For example, I really liked his use of “skill bars” to highlight his coding experience.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>resume_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">'https://raw.githubusercontent.com/mleary/resume/main/data/skill_data.csv'</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">source_url</span>(<span class="st">"https://raw.githubusercontent.com/mleary/resume/master/helper_functions.R"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">build_skill_bars</span>(resume_data, <span class="st">"Tech"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/skill-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+<section id="main-efforts" class="level2">
+<h2 class="anchored" data-anchor-id="main-efforts">Main efforts</h2>
+<p>Here some of my major steps I took to fully leverage {pagedown} resume template.</p>
+<section id="updating-the-css" class="level3">
+<h3 class="anchored" data-anchor-id="updating-the-css">Updating the CSS</h3>
+<p>With limited CSS experience, this step took the longest as I explored CSS syntax and the resulting output. I’ll ignore the actual CSS code and the changes I made, but the process of adding a custom CSS file was simple. First, create a .css file with the changes you want to make. After that, add a few lines of code to the YAML header of the markdown template (seen below).</p>
+<pre><code>
+output:
+
+pagedown::html_resume:
+
+css: \['css/custom_resume.css', 'css/styles_html.css', 'resume'\]</code></pre>
+<p>Note that with this setup, the base CSS template is still used but is overwritten by my custom CSS files. I also created a css folder to house the files, which appeared to be a best practice.</p>
+</section>
+<section id="creating-an-excel-file-for-data" class="level3">
+<h3 class="anchored" data-anchor-id="creating-an-excel-file-for-data">Creating an Excel file for data</h3>
+<p>Rather than hard coding my work and education experience in the Markdown document, I liked the approach of creating a separate excel file with all the necessary data for my resume. This way it is easier to update my experience and in theory I could use that file to populate different resume versions, websites, etc..</p>
+</section>
+<section id="producing-multiple-versions" class="level3">
+<h3 class="anchored" data-anchor-id="producing-multiple-versions">Producing multiple versions</h3>
+<p>I wanted to create two different versions of my resume, one with color and a plain version for easier printing. That said, I did not want to maintain to separate RMarkdown documents since that would require me to update TWO documents to ensure they were both always up to date. While this wouldn’t be an overwhelming burden, I also suspected it would lead to two versions with minor differences.</p>
+<p>Using the render function from the **rmarkdown** package, I was able to easily update both versions at the same time. With this function, you can take an rmarkdown file and control some of the output settings. For example, I was able to control the output file name, the css settings, and any individual parameter settings used in the YAML settings.</p>
+<pre><code>
+rmarkdown::render(input = "resume.Rmd",
+  output_file = "index.html",
+  output_options = list(css = c('css/custom_resume.css', 'css/styles_html.css', 'resume'),
+  self_contained = FALSE
+  ),
+  params = list(doctype = "HTML")
+)
+
+rmarkdown::render(input = "resume.Rmd",
+  output_file = "mleary_resume.html",
+  output_options = list(
+    css = c('css/custom_resume.css', 'css/styles_pdf.css', 'resume')
+  ),
+  params = list(doctype = "PDF")
+)</code></pre>
+<p>This was really helpful to learn for future projects. Saving the output as a different name is something that could helpful in other circumstances. For routine reports that might be ran periodically, it would be helpful to use this function to save the output with the current date. Another use case would be to create template format and than create multiple outputs for a list of items using the **purrr** package.</p>
+</section>
+</section>
+<section id="lessons-learned" class="level2">
+<h2 class="anchored" data-anchor-id="lessons-learned">Lessons Learned</h2>
+<p>The process was relatively straightforward and lead to learning several new R tips that could be applied elsewhere. My major takeaways are listed below.</p>
+<p>* Google is your friend. The {pagedown} documentation was great, but finding Nick’s example really helped me develop a resume I liked.</p>
+<p>* Rmarkdown is awesome. I already thought this, but a simple trick like rendering an existing Rmarkdown with specific parameters means I can know do even more with the package.</p>
+<p>* CSS styling is nuanced, but it also adds a lot. I am not a CSS expert, but with some simple research and a LOT of experimentation I was able to quickly make changes. I’ve used CSS to create a custom {rmarkdown} template at work, and that little addition really makes the report stand out.</p>
 
 
 </section>
