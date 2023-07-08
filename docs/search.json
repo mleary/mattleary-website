@@ -7,27 +7,6 @@
     "text": "Generating my resume with {pagedown}\n\n\n\nR\n\n\npagedown\n\n\n\nCreating a daynamic resume I can easily update and share with R, {pagedown}, and some basic {rmarkdown} functionality,\n\n\n\nMatt Leary\n\n\nJul 8, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMoving to a Quarto website\n\n\n\nQuarto\n\n\nR\n\n\n\nUpdating my previous {blogdown} website with RStudio and Quarto (an open-source scientific and technical publishing system.\n\n\n\nMatt Leary\n\n\nJul 7, 2023\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "matt_leary",
-    "section": "",
-    "text": "I am a data scientist, Tottenham Hotspur fan, Veteran, and proud minivan owner. I created this website to share my work and help future Matt find code snippets and remember how I did things.\nI built this site with quarto, and have used it as a chance to revamp an older website built with Hugo & {blogdown}\nFor information on me, feel free to visit the about_me section to get a brief bio and find links to my LinkedIn, Github page, and current resume."
-  },
-  {
-    "objectID": "index.html#welcome-to-mattleary.com",
-    "href": "index.html#welcome-to-mattleary.com",
-    "title": "matt_leary",
-    "section": "",
-    "text": "I am a data scientist, Tottenham Hotspur fan, Veteran, and proud minivan owner. I created this website to share my work and help future Matt find code snippets and remember how I did things.\nI built this site with quarto, and have used it as a chance to revamp an older website built with Hugo & {blogdown}\nFor information on me, feel free to visit the about_me section to get a brief bio and find links to my LinkedIn, Github page, and current resume."
-  },
-  {
-    "objectID": "posts/2023-07-07_moving-to-quarto/index.html",
-    "href": "posts/2023-07-07_moving-to-quarto/index.html",
-    "title": "Moving to a Quarto website",
-    "section": "",
-    "text": "After many months (years?) of not really touching my personal website, I am working to update my website and truly delve into using quarto for analysis and publication. This initial post will be a short summary of my efforts to get started, document some of the resources I found and used, and a starting point for what will *hopefully* become a regularly updated post.\n\nLessons learned\n\nI had an existing template, after a few hours I was able to follow Sam Csik tutorial (to help me create blog section on the website.\n\nUsed this tutorial\n\nUsing a custom domain is relatively simple, but it took some configuring to get it right.\n\nGithub docs\n\nUsed the section entitled Configuring an apex domain\n\nRandom YouTube video that helped visual the process\n\nRealized I might want to setup a Github Actions workflow instead of rendering locally. Not sure on that yet.\nBring over old .Rmd files used in my previous {blogdown} format was clunky\n\nNot sure if it was simply a copy paste issue, but I took an old post and tried to move it over. Quarto seemed to have some new syntax and it proved to be a little bit of a hassle. Again, this might have been user error on the first go round but I might just focus on starting fresh moving forward.\n\nConsolidating\n\nI have created several other websites with Github. Debating if I want to link to those, move that content into this website, or refactor those as quarto webpages.\n\n\n\n\nAdditional resources used\n\nhttps://beamilz.com/"
-  },
-  {
     "objectID": "posts/2023-07-08_resume_pagedown/index.html",
     "href": "posts/2023-07-08_resume_pagedown/index.html",
     "title": "Generating my resume with {pagedown}",
@@ -70,8 +49,15 @@
     "text": "Lessons Learned\nThe process was relatively straightforward and lead to learning several new R tips that could be applied elsewhere. My major takeaways are listed below.\n* Google is your friend. The {pagedown} documentation was great, but finding Nick’s example really helped me develop a resume I liked.\n* Rmarkdown is awesome. I already thought this, but a simple trick like rendering an existing Rmarkdown with specific parameters means I can know do even more with the package.\n* CSS styling is nuanced, but it also adds a lot. I am not a CSS expert, but with some simple research and a LOT of experimentation I was able to quickly make changes. I’ve used CSS to create a custom {rmarkdown} template at work, and that little addition really makes the report stand out."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
+    "objectID": "posts/2023-07-07_moving-to-quarto/index.html",
+    "href": "posts/2023-07-07_moving-to-quarto/index.html",
+    "title": "Moving to a Quarto website",
+    "section": "",
+    "text": "After many months (years?) of not really touching my personal website, I am working to update my website and truly delve into using quarto for analysis and publication. This initial post will be a short summary of my efforts to get started, document some of the resources I found and used, and a starting point for what will *hopefully* become a regularly updated post.\n\nLessons learned\n\nI had an existing template, after a few hours I was able to follow Sam Csik tutorial (to help me create blog section on the website.\n\nUsed this tutorial\n\nUsing a custom domain is relatively simple, but it took some configuring to get it right.\n\nGithub docs\n\nUsed the section entitled Configuring an apex domain\n\nRandom YouTube video that helped visual the process\n\nRealized I might want to setup a Github Actions workflow instead of rendering locally. Not sure on that yet.\nBring over old .Rmd files used in my previous {blogdown} format was clunky\n\nNot sure if it was simply a copy paste issue, but I took an old post and tried to move it over. Quarto seemed to have some new syntax and it proved to be a little bit of a hassle. Again, this might have been user error on the first go round but I might just focus on starting fresh moving forward.\n\nConsolidating\n\nI have created several other websites with Github. Debating if I want to link to those, move that content into this website, or refactor those as quarto webpages.\n\n\n\n\nAdditional resources used\n\nhttps://beamilz.com/"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "matt_leary",
     "section": "",
     "text": "Hi!\nI am a data scientist working in the insurance industry and I enjoy building tools that help people work more efficiently. I work regularly with R and Python, but R will always be my preferred language for analysis and machine learning. I am frequently working with SQL and Git (DevOps or Github), and have experience with cloud computing such as AWS, Azure, and Databricks.\nOutside of work, I am the proud father of two tiny humans and an avid Tottenham Hotspur fan. I previously worked in public policy/public relations, and spent a few years in the Army*.\n*Fun fact, you run and workout a LOT less when no one is yelling at you to do so."
