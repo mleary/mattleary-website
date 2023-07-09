@@ -2,3 +2,7 @@
 .icon-home {
   color: white;
 }
+
+.navbar-dark .navbar-brand {
+  color: white;
+}

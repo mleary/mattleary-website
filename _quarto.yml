@@ -2,24 +2,26 @@ project:
   type: website
   output-dir: docs
 website:
-  favicon: images/favicon.png
+  favicon: images/favicon-website.png
   title: "matt_leary"
   navbar:
+    title: matt_leary
+    logo: images/logo.png
+    logo-alt: A cockrell, similiar to the Tottenham Hotspur logo, in white next 
+              to a white vertical line followed by the text matt_leary also in white
     background: "#132257"
     right: 
     - href: posts.html
       text: posts
+    - icon: linkedin
+      href: https://www.linkedin.com/in/mbleary
+    - icon: envelope
+      href: mailto:matt.leary@proton.me
     - icon: github
-      aria-label: github
       href: https://github.com/mleary/mattleary-website
   page-footer:
     left: "Blog made by Matt Leary with [Quarto](https://quarto.org/). License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
-    right: 
-      - icon: github
-        aria-label: github
-        href: https://github.com/mleary/mattleary-website
-      - icon: envelope
-        href: mailto:matt.leary@proton.me
+    right: "audere est facere"
 format:
   html:
     theme: cosmo
