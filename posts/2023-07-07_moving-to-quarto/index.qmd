@@ -10,8 +10,9 @@ After many months (years?) of not really touching my personal website, I am work
 
 ### Lessons learned
 
--   I had an existing template, after a few hours I was able to follow Sam Csik tutorial (to help me create blog section on the website.
-    -   [Used this tutorial](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)
+-   I had an existing template, after a few hours I was able to follow blogs by Sam Csik and Bea Milz to help me create a seperate posts section, add a footer, and generally make some customizations I really liked.
+    -   [Sam Csik blog](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)
+    -   [Bea Milz website I reviewed for ideas and code snippets]( <https://beamilz.com/>)
 -   Using a custom domain is relatively simple, but it took some configuring to get it right.
     -   [Github docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
         -   Used the section entitled **Configuring an apex domain**
@@ -22,6 +23,5 @@ After many months (years?) of not really touching my personal website, I am work
 -   Consolidating
     -   I have created several other websites with Github. Debating if I want to link to those, move that content into this website, or refactor those as quarto webpages.
 
-### Additional resources used
 
--   <https://beamilz.com/>
+ 
