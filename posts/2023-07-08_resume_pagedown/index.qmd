@@ -36,7 +36,8 @@ After some quick research on {pagedown} examples, I stumbled upon Nick Strayer's
 #| warning: false
 #| message: false
 
-library(tidyverse)
+library(readr)
+library(devtools)
 
 resume_data <- readr::read_csv('https://raw.githubusercontent.com/mleary/resume/main/data/skill_data.csv')
 
