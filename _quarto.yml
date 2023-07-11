@@ -16,9 +16,9 @@ website:
     - text: resouces
       menu:
       - text: helpful links
-        href: resources/resources-links.qmd
+        href: resources/resources-links.html
       - text: data notes
-        href: resources/resources-notes.qmd
+        href: resources/resources-notes.html
     - icon: linkedin
       href: https://www.linkedin.com/in/mbleary
     - icon: envelope
