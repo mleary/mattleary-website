@@ -1,0 +1,19 @@
+---
+page-layout: full
+title-block-banner: true
+toc: false
+---
+
+## helpful links
+
+A simple place to store articles & materials I find helpful.
+
+### Quarto
+
+-   [Sam Csik blog - great format I used for inspriation and ideas](https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/)
+-   [Bea Milz website I reviewed for ideas and code snippets](https://beamilz.com/)
+
+### R
+
+-   [Julia Silge blogpost](https://juliasilge.com/blog/tuition-resampling) on `tidymodels` package
+    -   Great, concise example of using `tidymodels`

@@ -13,6 +13,12 @@ website:
     right: 
     - href: posts.html
       text: posts
+    - text: resouces
+      menu:
+      - text: helpful links
+        href: resources/resources-links.qmd
+      - text: data notes
+        href: resources/resources-notes.qmd
     - icon: linkedin
       href: https://www.linkedin.com/in/mbleary
     - icon: envelope
