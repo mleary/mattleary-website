@@ -1,10 +1,17 @@
 [
   {
-    "objectID": "posts.html",
-    "href": "posts.html",
+    "objectID": "resources/resources-notes.html",
+    "href": "resources/resources-notes.html",
     "title": "matt_leary",
     "section": "",
-    "text": "Generating my resume with {pagedown}\n\n\n\nR\n\n\npagedown\n\n\n\nCreating a daynamic resume I can easily update and share with R, {pagedown}, and some basic {rmarkdown} functionality,\n\n\n\nMatt Leary\n\n\nJul 8, 2023\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMoving to a Quarto website\n\n\n\nQuarto\n\n\nR\n\n\n\nUpdating my previous {blogdown} website with RStudio and Quarto (an open-source scientific and technical publishing system.\n\n\n\nMatt Leary\n\n\nJul 7, 2023\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "A simple place to notes on data related “things."
+  },
+  {
+    "objectID": "resources/resources-notes.html#data-notes",
+    "href": "resources/resources-notes.html#data-notes",
+    "title": "matt_leary",
+    "section": "",
+    "text": "A simple place to notes on data related “things."
   },
   {
     "objectID": "posts/2023-07-08_resume_pagedown/index.html",
@@ -54,6 +61,20 @@
     "title": "Moving to a Quarto website",
     "section": "",
     "text": "After many months (years?) of not really touching my personal website, I am working to update my website and truly delve into using quarto for analysis and publication. This initial post will be a short summary of my efforts to get started, document some of the resources I found and used, and a starting point for what will *hopefully* become a regularly updated post.\n\nLessons learned\n\nI had an existing template, after a few hours I was able to follow blogs by Sam Csik and Bea Milz to help me create a seperate posts section, add a footer, and generally make some customizations I really liked.\n\nSam Csik blog\nBea Milz website I reviewed for ideas and code snippets\n\nUsing a custom domain is relatively simple, but it took some configuring to get it right.\n\nGithub docs\n\nUsed the section entitled Configuring an apex domain\n\nRandom YouTube video that helped visual the process\n\nRealized I might want to setup a Github Actions workflow instead of rendering locally. Not sure on that yet.\nBring over old .Rmd files used in my previous {blogdown} format was clunky\n\nNot sure if it was simply a copy paste issue, but I took an old post and tried to move it over. Quarto seemed to have some new syntax and it proved to be a little bit of a hassle. Again, this might have been user error on the first go round but I might just focus on starting fresh moving forward.\n\nConsolidating\n\nI have created several other websites with Github. Debating if I want to link to those, move that content into this website, or refactor those as quarto webpages."
+  },
+  {
+    "objectID": "resources/resources-links.html",
+    "href": "resources/resources-links.html",
+    "title": "matt_leary",
+    "section": "",
+    "text": "A simple place to store articles & materials I find helpful.\n\n\n\nSam Csik blog - great format I used for inspriation and ideas\nBea Milz website I reviewed for ideas and code snippets\n\n\n\n\n\nJulia Silge blogpost on tidymodels package\n\nGreat, concise example of using tidymodels"
+  },
+  {
+    "objectID": "resources/resources-links.html#helpful-links",
+    "href": "resources/resources-links.html#helpful-links",
+    "title": "matt_leary",
+    "section": "",
+    "text": "A simple place to store articles & materials I find helpful.\n\n\n\nSam Csik blog - great format I used for inspriation and ideas\nBea Milz website I reviewed for ideas and code snippets\n\n\n\n\n\nJulia Silge blogpost on tidymodels package\n\nGreat, concise example of using tidymodels"
   },
   {
     "objectID": "index.html",
