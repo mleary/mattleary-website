@@ -19,6 +19,8 @@ website:
         href: resources/resources-links.html
       - text: data notes
         href: resources/resources-notes.html
+      - text: cooking recipes
+        href: resources/resources-cooking.html        
     - icon: linkedin
       href: https://www.linkedin.com/in/mbleary
     - icon: envelope
