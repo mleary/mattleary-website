@@ -1,0 +1,51 @@
+---
+page-layout: full
+title-block-banner: true
+toc: false
+---
+
+## Why create a recipes website?
+
+I am terrible at saving / remembering which recipes we have used and liked. My spouse has grown tired of me asking for the link to the same recipe again and again.
+
+This is a quick attempt to save cooking recipes to a simple website I can control. And on the plus side, versus saving links in a browser or Notepad, this means I can access the recipes from anywhere.
+
+```{r, collapse=TRUE, message=FALSE}
+#| code-fold: true
+#| code-summary: "Show the code"
+library(googlesheets4)
+library(gt)
+library(dplyr)
+library(gtExtras)
+library(fontawesome)
+
+fontawesome::fa_html_dependency()
+
+# Only need to use this when setting it up for the first time on a computer
+#gs4_auth()
+
+google_sheets_path <- Sys.getenv("GSHEETS_PATH")
+sheet <- read_sheet(google_sheets_path)
+
+sheet <- sheet %>%
+  mutate(Recipe = paste0("[", Recipe, "](", Website, ")")) %>%
+  select(-Website)
+
+gt_table <- gt(sheet) %>%
+  tab_header('Recipes we like')  %>%
+  cols_width(
+    Recipe ~ pct(25),
+    `Kids Rating` ~ pct(20),
+    `Adult Rating` ~ pct(20),
+    Notes ~ pct(35)
+  ) %>%
+  fmt_markdown(columns = c(Recipe))  %>%
+  gtExtras::gt_fa_rating(`Kids Rating`, icon='thumbs-up', color = 'red') %>%
+  gtExtras::gt_fa_rating(`Adult Rating`, icon='thumbs-up', color = 'blue')%>%
+  gtExtras::gt_theme_espn()
+
+
+gt_table
+```
+
+
