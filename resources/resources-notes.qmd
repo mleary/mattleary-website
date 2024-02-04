@@ -2,7 +2,11 @@
 page-layout: full
 title-block-banner: true
 toc: false
+lightbox: true
+
 ---
+
+
 
 ## data notes
 
@@ -10,4 +14,19 @@ A simple place to notes on data related "things.
 
 
 ### This page is under construction, please bear with us. 
+
+![](bearwithme/bearwithme5.png){group="my-gallery"}
+
+
+### Obviously, I only need one image but I created six with OpenAI and Dall E so wanted to share them all!
+
+![](bearwithme/bearwithme2.png){group="my-gallery"}
+
+![](bearwithme/bearwithme3.png){group="my-gallery"}
+
+![](bearwithme/bearwithme4.png){group="my-gallery"}
+
+![](bearwithme/bearwithme1.png){group="my-gallery"}
+
+![](bearwithme/bearwithme6.png){group="my-gallery"}
 
