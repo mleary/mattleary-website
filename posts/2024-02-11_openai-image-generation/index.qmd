@@ -1,0 +1,26 @@
+---
+title: "OpenAI Image Generation Exploration"
+description: "I wanted to creat a "
+date: "2023-07-08"
+categories: [Python, OpenAI]
+image: "resume.png"
+---
+
+
+```{python}
+from openai import OpenAI
+from secret_stuff import OPENAI_KEY
+
+client = OpenAI(api_key=OPENAI_KEY)
+
+response = client.images.generate(
+  model="dall-e-3",
+  prompt="Here is a joke.  'What do you call a sad cofee?  Depresso'.  I want an image with a cup of coffee looking sad.  Please include the joke in the image.  With 'What do you call a sad coffee?' at the top. Make sure you also add 'Depresso' at the bottom.",
+  size="1024x1024",
+  quality="standard",
+  n=1,
+)
+
+image_url = response.data[0].url
+image_url
+```
