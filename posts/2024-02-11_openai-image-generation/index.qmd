@@ -1,24 +1,32 @@
 ---
-title: "OpenAI Image Generation Exploration"
+title: "Exploring image generation with DALL-E"
 description: "When you need a bear to send a message."
 date: "2024-02-08"
-categories: [Python, OpenAI, Gen AI, Dall-E]
-image: "resume.png"
+categories: [DALL-E, OpenAI, Gen AI, Python]
+image: "bear.png"
+lightbox: true
+
 ---
 
 ## Background on the idea
 
-Admittedly, I am late to exploring image geneartion with Dall-E.  But as they say, better late then never! I wanted to quickly post on some recent exploration using Open AI api with Dall-E.
+Admittedly, I am late to exploring image generation with DALL-E.  But as they say, better late then never! I wanted to quickly post on some recent exploration using Open AI's DALL-E. I won't go into how DALL-E works, but OpenAI describes it as AI system that can create realistic images and art from a description in natural language.  You can learn more about [here](https://openai.com/dall-e-2). 
 
-I had a section of my website for data notes, to capture useful code snippets, new packages, and even techniques I haven't used much.  I saw a similiar idea on someone elses blog and thought it was a great idea.  That said, I have yet to populate it with anything.  So for the short term, I figured why not create an image of bear saying something like "Please BEAR with us" to announce the site was under construction.  A very normal and commonsense idea in my eyes.
+I had a section of my website for data notes, to capture useful code snippets, new packages, or just tools/techniques I haven't used much.  I saw a similar idea on someone elses blog and thought it was a great idea.  That said, I have yet to populate it with anything.  
+
+So for the short term, I figured why not create an image of bear saying something like "Please BEAR with us" to announce the site was under construction.  A very normal and commonsense idea in my eyes.
 
 
 ## Using Open AI for image generation
 
+As I expected, it was incredibly easy to use the Open AI api with just a few lines of code.  Each each call only cost a few pennies (I saw 3-4 cents per image) and took 5-10 seconds to return a response. So overall, very inexpensive and quick to iterate with new different images. 
 
-
+I started with a vague prompt about a bear saying "please bear with me", and slowly refined it.
 
 ```{python}
+#| code-fold: show
+#| code-summary: "hide / show code"
+#| code-overflow: wrap
 from openai import OpenAI
 import os
 from secret_keys import OPENAI_KEY
@@ -27,20 +35,26 @@ client = OpenAI(api_key=OPENAI_KEY)
 
 response = client.images.generate(
   model="dall-e-3",
-  prompt="I want a picture of a bear in construction gear sitting at a computer typing code.  I want a message at the top of the image that says 'Please BEAR with us, this site is under construction. The idea is for this to be cartoonish and funny!  Please add this exact phrase at the bottom 'Created with Dall-E'",
+  prompt="I want a picture of a bear in construction gear sitting at a computer typing code.  I want a message at the top of the image that says 'Please BEAR with us, this site is under construction. The idea is for this to be cartoonish and funny!  Please add this exact phrase at the bottom 'Created with DALL-E'",
   size="1024x1024",
   quality="standard",
   n=1,
 )
 
 image_url = response.data[0].url
-image_url
+image_url 
+
 ```
 
+And just like that, you have a url where you can view the generated image and download it locally.  A few things to note that I found interesting:
 
-# data notes
+* As of February 2024, the image will stay up for one hour per the DALL-E [documentation](https://help.openai.com/en/articles/6705023-dall-e-api-faq).
 
-A simple place to notes on data related "things.
+* You'll notice that while the image outputs are impressive, the text generation was surprisingly bad.  Even with direct prompts to include a specific saying, it often got the phrase wrong, misspelled words or even made up words.  Some quick research confirmed it's a common occurrence. I read some explanations for why, but I did not go deep enough to confirm exactly why.  I am interested to read more on that.
+
+# The finished outputs
+
+You can find the page I setup [here](../../resources/resources-notes.html) until I add actual notes.  And in case that happens, you can see a rough copy of the page below. I'll note, I leveraged the `lightbox` feature with Quarto so you can click on the first image to cycle through all seven.
 
 
 ### This page is under construction, please bear with us. 
@@ -48,7 +62,7 @@ A simple place to notes on data related "things.
 ![](bearwithme/bearwithme5.png){group="my-gallery"}
 
 
-### Obviously, I only need one image but I created six with OpenAI and Dall E so wanted to share them all!
+#### Obviously, I only need one image but I created six with OpenAI and Dall E so wanted to share them all!
 
 ![](bearwithme/bearwithme2.png){group="my-gallery"}
 
