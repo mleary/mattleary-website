@@ -1,21 +1,23 @@
 ---
 title: "OpenAI Image Generation Exploration"
-description: "I wanted to creat a "
+description: "I wanted to a bear to explain a webpage."
 date: "2023-07-08"
-categories: [Python, OpenAI]
+categories: [Python, OpenAI, Gen AI]
 image: "resume.png"
 ---
 
+Admittedly, I am late to exploring image geneartion with Dall-E.  As I look to revive my efforts to write posts exploring the rapidly changing world of Generative AI.  This will be a quick post, but I recently explored adding 
 
 ```{python}
 from openai import OpenAI
-from secret_stuff import OPENAI_KEY
+import os
+from secret_keys import OPENAI_KEY
 
 client = OpenAI(api_key=OPENAI_KEY)
 
 response = client.images.generate(
   model="dall-e-3",
-  prompt="Here is a joke.  'What do you call a sad cofee?  Depresso'.  I want an image with a cup of coffee looking sad.  Please include the joke in the image.  With 'What do you call a sad coffee?' at the top. Make sure you also add 'Depresso' at the bottom.",
+  prompt="I want a picture of a bear in construction gear sitting at a computer typing code.  I want a message at the top of the image that says 'Please BEAR with us, this site is under construction. The idea is for this to be cartoonish and funny!  Please add this exact phrase at the bottom 'Created with Dall-E'",
   size="1024x1024",
   quality="standard",
   n=1,
@@ -24,3 +26,5 @@ response = client.images.generate(
 image_url = response.data[0].url
 image_url
 ```
+
+
