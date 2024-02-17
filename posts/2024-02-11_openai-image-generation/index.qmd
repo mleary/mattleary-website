@@ -1,12 +1,22 @@
 ---
 title: "OpenAI Image Generation Exploration"
-description: "I wanted to a bear to explain a webpage."
-date: "2023-07-08"
-categories: [Python, OpenAI, Gen AI]
+description: "When you need a bear to send a message."
+date: "2024-02-08"
+categories: [Python, OpenAI, Gen AI, Dall-E]
 image: "resume.png"
 ---
 
-Admittedly, I am late to exploring image geneartion with Dall-E.  As I look to revive my efforts to write posts exploring the rapidly changing world of Generative AI.  This will be a quick post, but I recently explored adding 
+## Background on the idea
+
+Admittedly, I am late to exploring image geneartion with Dall-E.  But as they say, better late then never! I wanted to quickly post on some recent exploration using Open AI api with Dall-E.
+
+I had a section of my website for data notes, to capture useful code snippets, new packages, and even techniques I haven't used much.  I saw a similiar idea on someone elses blog and thought it was a great idea.  That said, I have yet to populate it with anything.  So for the short term, I figured why not create an image of bear saying something like "Please BEAR with us" to announce the site was under construction.  A very normal and commonsense idea in my eyes.
+
+
+## Using Open AI for image generation
+
+
+
 
 ```{python}
 from openai import OpenAI
@@ -28,3 +38,26 @@ image_url
 ```
 
 
+# data notes
+
+A simple place to notes on data related "things.
+
+
+### This page is under construction, please bear with us. 
+
+![](bearwithme/bearwithme5.png){group="my-gallery"}
+
+
+### Obviously, I only need one image but I created six with OpenAI and Dall E so wanted to share them all!
+
+![](bearwithme/bearwithme2.png){group="my-gallery"}
+
+![](bearwithme/bearwithme3.png){group="my-gallery"}
+
+![](bearwithme/bearwithme4.png){group="my-gallery"}
+
+![](bearwithme/bearwithme1.png){group="my-gallery"}
+
+![](bearwithme/bearwithme6.png){group="my-gallery"}
+
+![](bearwithme/bearwithme7.png){group="my-gallery"}
