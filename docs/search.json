@@ -28,6 +28,27 @@
     "text": "A simple place to store articles & materials I find helpful.\n\n\n\nSam Csik blog - great format I used for inspriation and ideas\nBea Milz website I reviewed for ideas and code snippets\n\n\n\n\n\nJulia Silge blogpost on tidymodels package\n\nGreat, concise example of using tidymodels"
   },
   {
+    "objectID": "posts/2024-02-11_openai-image-generation/index.html",
+    "href": "posts/2024-02-11_openai-image-generation/index.html",
+    "title": "Exploring image generation with DALL-E",
+    "section": "",
+    "text": "Admittedly, I am late to exploring image generation with DALL-E. But as they say, better late then never! I wanted to quickly post on some recent exploration using Open AI’s DALL-E. I won’t go into how DALL-E works, but OpenAI describes it as AI system that can create realistic images and art from a description in natural language. You can learn more about here.\nI had a section of my website for data notes, to capture useful code snippets, new packages, or just tools/techniques I haven’t used much. I saw a similar idea on someone elses blog and thought it was a great idea. That said, I have yet to populate it with anything.\nSo for the short term, I figured why not create an image of bear saying something like “Please BEAR with us” to announce the site was under construction. A very normal and commonsense idea in my eyes."
+  },
+  {
+    "objectID": "posts/2024-02-11_openai-image-generation/index.html#background-on-the-idea",
+    "href": "posts/2024-02-11_openai-image-generation/index.html#background-on-the-idea",
+    "title": "Exploring image generation with DALL-E",
+    "section": "",
+    "text": "Admittedly, I am late to exploring image generation with DALL-E. But as they say, better late then never! I wanted to quickly post on some recent exploration using Open AI’s DALL-E. I won’t go into how DALL-E works, but OpenAI describes it as AI system that can create realistic images and art from a description in natural language. You can learn more about here.\nI had a section of my website for data notes, to capture useful code snippets, new packages, or just tools/techniques I haven’t used much. I saw a similar idea on someone elses blog and thought it was a great idea. That said, I have yet to populate it with anything.\nSo for the short term, I figured why not create an image of bear saying something like “Please BEAR with us” to announce the site was under construction. A very normal and commonsense idea in my eyes."
+  },
+  {
+    "objectID": "posts/2024-02-11_openai-image-generation/index.html#using-open-ai-for-image-generation",
+    "href": "posts/2024-02-11_openai-image-generation/index.html#using-open-ai-for-image-generation",
+    "title": "Exploring image generation with DALL-E",
+    "section": "Using Open AI for image generation",
+    "text": "Using Open AI for image generation\nAs I expected, it was incredibly easy to use the Open AI api with just a few lines of code. Each each call only cost a few pennies (I saw 3-4 cents per image) and took 5-10 seconds to return a response. So overall, very inexpensive and quick to iterate with new different images.\nI started with a vague prompt about a bear saying “please bear with me”, and slowly refined it.\n\n\nhide / show code\nfrom openai import OpenAI\nimport os\nfrom secret_keys import OPENAI_KEY\n\nclient = OpenAI(api_key=OPENAI_KEY)\n\nresponse = client.images.generate(\n  model=\"dall-e-3\",\n  prompt=\"I want a picture of a bear in construction gear sitting at a computer typing code.  I want a message at the top of the image that says 'Please BEAR with us, this site is under construction. The idea is for this to be cartoonish and funny!  Please add this exact phrase at the bottom 'Created with DALL-E'\",\n  size=\"1024x1024\",\n  quality=\"standard\",\n  n=1,\n)\n\nimage_url = response.data[0].url\nimage_url \n\n\n'https://oaidalleapiprodscus.blob.core.windows.net/private/org-QwvrbKaSi0VeflwsDx1dYz8t/user-xeCmfMW6XAJBDsWzkXkIRsNp/img-2xf5B8J4ZbuylSvNHcSRPInx.png?st=2024-02-17T18%3A19%3A44Z&se=2024-02-17T20%3A19%3A44Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-02-17T18%3A56%3A39Z&ske=2024-02-18T18%3A56%3A39Z&sks=b&skv=2021-08-06&sig=ldgus5CfsRP6VGOW75XUf%2B2IiRF7C8e7wCXEYp3hFUY%3D'\n\n\nAnd just like that, you have a url where you can view the generated image and download it locally. A few things to note that I found interesting:\n\nAs of February 2024, the image will stay up for one hour per the DALL-E documentation.\nYou’ll notice that while the image outputs are impressive, the text generation was surprisingly bad. Even with direct prompts to include a specific saying, it often got the phrase wrong, misspelled words or even made up words. Some quick research confirmed it’s a common occurrence. I read some explanations for why, but I did not go deep enough to confirm exactly why. I am interested to read more on that."
+  },
+  {
     "objectID": "posts/2023-07-07_moving-to-quarto/index.html",
     "href": "posts/2023-07-07_moving-to-quarto/index.html",
     "title": "Moving to a Quarto website",
