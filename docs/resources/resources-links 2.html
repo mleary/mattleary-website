@@ -6,11 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Matt Leary">
-<meta name="dcterms.date" content="2024-02-08">
-<meta name="description" content="When you need a bear to send a message.">
 
-<title>matt_leary - Exploring image generation with DALL-E</title>
+<title>matt_leary</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,63 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../images/favicon-website.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../images/favicon-website.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -119,10 +79,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/logo.png" alt="A cockrell, similiar to the Tottenham Hotspur logo, in white next to a white vertical line followed by the text matt_leary also in white" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo.png" alt="A cockrell, similiar to the Tottenham Hotspur logo, in white next to a white vertical line followed by the text matt_leary also in white" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">matt_leary</span>
     </a>
   </div>
@@ -133,7 +93,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../posts.html"> 
+    <a class="nav-link" href="../posts.html"> 
 <span class="menu-text">posts</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -142,15 +102,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resouces">    
         <li>
-    <a class="dropdown-item" href="../../resources/resources-links.html">
+    <a class="dropdown-item" href="../resources/resources-links.html">
  <span class="dropdown-text">helpful links</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../resources/resources-notes.html">
+    <a class="dropdown-item" href="../resources/resources-notes.html">
  <span class="dropdown-text">data notes</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../resources/resources-cooking.html">
+    <a class="dropdown-item" href="../resources/resources-cooking.html">
  <span class="dropdown-text">cooking recipes</span></a>
   </li>  
     </ul>
@@ -178,126 +138,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Exploring image generation with DALL-E</h1>
-                  <div>
-        <div class="description">
-          When you need a bear to send a message.
-        </div>
-      </div>
-                          <div class="quarto-categories">
-                <div class="quarto-category">DALL-E</div>
-                <div class="quarto-category">OpenAI</div>
-                <div class="quarto-category">Gen AI</div>
-                <div class="quarto-category">Python</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Matt Leary </p>
-            </div>
-    </div>
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">February 8, 2024</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#background-on-the-idea" id="toc-background-on-the-idea" class="nav-link active" data-scroll-target="#background-on-the-idea">Background on the idea</a></li>
-  <li><a href="#using-open-ai-for-image-generation" id="toc-using-open-ai-for-image-generation" class="nav-link" data-scroll-target="#using-open-ai-for-image-generation">Using Open AI for image generation</a></li>
-  <li><a href="#the-finished-outputs" id="toc-the-finished-outputs" class="nav-link" data-scroll-target="#the-finished-outputs">The finished outputs</a>
-  <ul class="collapse">
-  <li><a href="#this-page-is-under-construction-please-bear-with-us." id="toc-this-page-is-under-construction-please-bear-with-us." class="nav-link" data-scroll-target="#this-page-is-under-construction-please-bear-with-us.">This page is under construction, please bear with us.</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
 
-
-<section id="background-on-the-idea" class="level2">
-<h2 class="anchored" data-anchor-id="background-on-the-idea">Background on the idea</h2>
-<p>Admittedly, I am late to exploring image generation with DALL-E. But as they say, better late then never! I wanted to quickly post on some recent exploration using Open AI’s DALL-E. I won’t go into how DALL-E works, but OpenAI describes it as AI system that can create realistic images and art from a description in natural language. You can learn more about <a href="https://openai.com/dall-e-2">here</a>.</p>
-<p>I had a section of my website for data notes, to capture useful code snippets, new packages, or just tools/techniques I haven’t used much. I saw a similar idea on someone elses blog and thought it was a great idea. That said, I have yet to populate it with anything.</p>
-<p>So for the short term, I figured why not create an image of bear saying something like “Please BEAR with us” to announce the site was under construction. A very normal and commonsense idea in my eyes.</p>
-</section>
-<section id="using-open-ai-for-image-generation" class="level2">
-<h2 class="anchored" data-anchor-id="using-open-ai-for-image-generation">Using Open AI for image generation</h2>
-<p>As I expected, it was incredibly easy to use the Open AI api with just a few lines of code. Each each call only cost a few pennies (I saw 3-4 cents per image) and took 5-10 seconds to return a response. So overall, very inexpensive and quick to iterate with new different images.</p>
-<p>I started with a vague prompt about a bear saying “please bear with me”, and slowly refined it.</p>
-<div id="e6fab925" class="cell" data-execution_count="1">
-<details open="" class="code-fold">
-<summary>hide / show code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-overflow-wrap code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> secret_keys <span class="im">import</span> OPENAI_KEY</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> OpenAI(api_key<span class="op">=</span>OPENAI_KEY)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.images.generate(</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  model<span class="op">=</span><span class="st">"dall-e-3"</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  prompt<span class="op">=</span><span class="st">"I want a picture of a bear in construction gear sitting at a computer typing code.  I want a message at the top of the image that says 'Please BEAR with us, this site is under construction. The idea is for this to be cartoonish and funny!  Please add this exact phrase at the bottom 'Created with DALL-E'"</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  size<span class="op">=</span><span class="st">"1024x1024"</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  quality<span class="op">=</span><span class="st">"standard"</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  n<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>image_url <span class="op">=</span> response.data[<span class="dv">0</span>].url</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>image_url </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>'https://oaidalleapiprodscus.blob.core.windows.net/private/org-QwvrbKaSi0VeflwsDx1dYz8t/user-xeCmfMW6XAJBDsWzkXkIRsNp/img-2xf5B8J4ZbuylSvNHcSRPInx.png?st=2024-02-17T18%3A19%3A44Z&amp;se=2024-02-17T20%3A19%3A44Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-02-17T18%3A56%3A39Z&amp;ske=2024-02-18T18%3A56%3A39Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=ldgus5CfsRP6VGOW75XUf%2B2IiRF7C8e7wCXEYp3hFUY%3D'</code></pre>
-</div>
-</div>
-<p>And just like that, you have a url where you can view the generated image and download it locally. A few things to note that I found interesting:</p>
+<section id="helpful-links" class="level2">
+<h2 class="anchored" data-anchor-id="helpful-links">helpful links</h2>
+<p>A simple place to store articles &amp; materials I find helpful.</p>
+<section id="quarto" class="level3">
+<h3 class="anchored" data-anchor-id="quarto">Quarto</h3>
 <ul>
-<li><p>As of February 2024, the image will stay up for one hour per the DALL-E <a href="https://help.openai.com/en/articles/6705023-dall-e-api-faq">documentation</a>.</p></li>
-<li><p>You’ll notice that while the image outputs are impressive, the text generation was surprisingly bad. Even with direct prompts to include a specific saying, it often got the phrase wrong, misspelled words or even made up words. Some quick research confirmed it’s a common occurrence. I read some explanations for why, but I did not go deep enough to confirm exactly why. I am interested to read more on that.</p></li>
+<li><a href="https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/">Sam Csik blog - great format I used for inspriation and ideas</a></li>
+<li><a href="https://beamilz.com/">Bea Milz website I reviewed for ideas and code snippets</a></li>
 </ul>
 </section>
-<section id="the-finished-outputs" class="level1">
-<h1>The finished outputs</h1>
-<p>You can find the page I setup <a href="../../resources/resources-notes.html">here</a> until I add actual notes. And in case that happens, you can see a rough copy of the page below. I’ll note, I leveraged the <code>lightbox</code> feature with Quarto so you can click on the first image to cycle through all seven.</p>
-<section id="this-page-is-under-construction-please-bear-with-us." class="level3">
-<h3 class="anchored" data-anchor-id="this-page-is-under-construction-please-bear-with-us.">This page is under construction, please bear with us.</h3>
-<p><a href="bearwithme/bearwithme5.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme5.png" class="img-fluid"></a></p>
-<section id="obviously-i-only-need-one-image-but-i-created-six-with-openai-and-dall-e-so-wanted-to-share-them-all" class="level4">
-<h4 class="anchored" data-anchor-id="obviously-i-only-need-one-image-but-i-created-six-with-openai-and-dall-e-so-wanted-to-share-them-all">Obviously, I only need one image but I created six with OpenAI and Dall E so wanted to share them all!</h4>
-<p><a href="bearwithme/bearwithme2.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme2.png" class="img-fluid"></a></p>
-<p><a href="bearwithme/bearwithme3.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme3.png" class="img-fluid"></a></p>
-<p><a href="bearwithme/bearwithme4.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme4.png" class="img-fluid"></a></p>
-<p><a href="bearwithme/bearwithme1.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme1.png" class="img-fluid"></a></p>
-<p><a href="bearwithme/bearwithme6.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme6.png" class="img-fluid"></a></p>
-<p><a href="bearwithme/bearwithme7.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme7.png" class="img-fluid"></a></p>
+<section id="r" class="level3">
+<h3 class="anchored" data-anchor-id="r">R</h3>
+<ul>
+<li><a href="https://juliasilge.com/blog/tuition-resampling">Julia Silge blogpost</a> on <code>tidymodels</code> package
+<ul>
+<li>Great, concise example of using <code>tidymodels</code></li>
+</ul></li>
+</ul>
 
 
-</section>
 </section>
 </section>
 
@@ -703,31 +573,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 

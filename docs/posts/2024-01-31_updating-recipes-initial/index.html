@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Matt Leary">
-<meta name="dcterms.date" content="2024-02-08">
-<meta name="description" content="When you need a bear to send a message.">
+<meta name="dcterms.date" content="2024-01-31">
+<meta name="description" content="Moving a simple recipe website to Quarto while planning to leverage OpenAI Large Language Models for summarization and Github Actions for automation.">
 
-<title>matt_leary - Exploring image generation with DALL-E</title>
+<title>matt_leary - A Recipe for change</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,40 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -77,9 +43,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -181,17 +144,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Exploring image generation with DALL-E</h1>
+      <h1 class="title">A Recipe for change</h1>
                   <div>
         <div class="description">
-          When you need a bear to send a message.
+          Moving a simple recipe website to Quarto while planning to leverage OpenAI Large Language Models for summarization and Github Actions for automation.
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">DALL-E</div>
+                <div class="quarto-category">Quarto</div>
+                <div class="quarto-category">R</div>
                 <div class="quarto-category">OpenAI</div>
-                <div class="quarto-category">Gen AI</div>
-                <div class="quarto-category">Python</div>
+                <div class="quarto-category">gt</div>
               </div>
                   </div>
   </div>
@@ -209,7 +172,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 8, 2024</p>
+        <p class="date">January 31, 2024</p>
       </div>
     </div>
     
@@ -225,11 +188,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#background-on-the-idea" id="toc-background-on-the-idea" class="nav-link active" data-scroll-target="#background-on-the-idea">Background on the idea</a></li>
-  <li><a href="#using-open-ai-for-image-generation" id="toc-using-open-ai-for-image-generation" class="nav-link" data-scroll-target="#using-open-ai-for-image-generation">Using Open AI for image generation</a></li>
-  <li><a href="#the-finished-outputs" id="toc-the-finished-outputs" class="nav-link" data-scroll-target="#the-finished-outputs">The finished outputs</a>
+  <li><a href="#a-chatgpt-intro" id="toc-a-chatgpt-intro" class="nav-link active" data-scroll-target="#a-chatgpt-intro">A ChatGPT intro</a></li>
+  <li><a href="#a-new-project-migrating-to-quarto-and-exploring-openai" id="toc-a-new-project-migrating-to-quarto-and-exploring-openai" class="nav-link" data-scroll-target="#a-new-project-migrating-to-quarto-and-exploring-openai">A new project, migrating to Quarto and exploring OpenAI</a>
   <ul class="collapse">
-  <li><a href="#this-page-is-under-construction-please-bear-with-us." id="toc-this-page-is-under-construction-please-bear-with-us." class="nav-link" data-scroll-target="#this-page-is-under-construction-please-bear-with-us.">This page is under construction, please bear with us.</a></li>
+  <li><a href="#initial-setup" id="toc-initial-setup" class="nav-link" data-scroll-target="#initial-setup">Initial Setup</a></li>
+  <li><a href="#future-plans" id="toc-future-plans" class="nav-link" data-scroll-target="#future-plans">Future plans</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -241,63 +204,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="background-on-the-idea" class="level2">
-<h2 class="anchored" data-anchor-id="background-on-the-idea">Background on the idea</h2>
-<p>Admittedly, I am late to exploring image generation with DALL-E. But as they say, better late then never! I wanted to quickly post on some recent exploration using Open AI’s DALL-E. I won’t go into how DALL-E works, but OpenAI describes it as AI system that can create realistic images and art from a description in natural language. You can learn more about <a href="https://openai.com/dall-e-2">here</a>.</p>
-<p>I had a section of my website for data notes, to capture useful code snippets, new packages, or just tools/techniques I haven’t used much. I saw a similar idea on someone elses blog and thought it was a great idea. That said, I have yet to populate it with anything.</p>
-<p>So for the short term, I figured why not create an image of bear saying something like “Please BEAR with us” to announce the site was under construction. A very normal and commonsense idea in my eyes.</p>
+<section id="a-chatgpt-intro" class="level2">
+<h2 class="anchored" data-anchor-id="a-chatgpt-intro">A ChatGPT intro</h2>
+<p>Hey folks,</p>
+<p>Long time no blog, right? Well, guess what got me back into the keyboard clacking game? A combo of needing a push and stumbling onto a pretty cool project. So, here I am, ready to spill the beans on my latest coding escapade.</p>
+<p>Confession time: I’ve got this not-so-great habit. I cook up these awesome meals for the fam, and then, poof! Forget how to recreate the magic. It’s like culinary amnesia. Ever been there?</p>
+<p>So, a while back, I threw together this simple thing to track recipes, just to keep my kitchen capers in check. Fast forward, and it’s become this cool project that’s dragging me back to blogging – in a good way.</p>
+<p>Stay tuned for the full scoop on how I’m leveling up my recipe game, avoiding the “What was in that again?” moments, and diving into a bit of tech fun. Quarto, Google Sheets, OpenAI magic – it’s all in the mix.</p>
+<p>Catch you in the next post!</p>
+<p>Cheers, [Your First Name]</p>
 </section>
-<section id="using-open-ai-for-image-generation" class="level2">
-<h2 class="anchored" data-anchor-id="using-open-ai-for-image-generation">Using Open AI for image generation</h2>
-<p>As I expected, it was incredibly easy to use the Open AI api with just a few lines of code. Each each call only cost a few pennies (I saw 3-4 cents per image) and took 5-10 seconds to return a response. So overall, very inexpensive and quick to iterate with new different images.</p>
-<p>I started with a vague prompt about a bear saying “please bear with me”, and slowly refined it.</p>
-<div id="e6fab925" class="cell" data-execution_count="1">
-<details open="" class="code-fold">
-<summary>hide / show code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-overflow-wrap code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> secret_keys <span class="im">import</span> OPENAI_KEY</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> OpenAI(api_key<span class="op">=</span>OPENAI_KEY)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.images.generate(</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  model<span class="op">=</span><span class="st">"dall-e-3"</span>,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  prompt<span class="op">=</span><span class="st">"I want a picture of a bear in construction gear sitting at a computer typing code.  I want a message at the top of the image that says 'Please BEAR with us, this site is under construction. The idea is for this to be cartoonish and funny!  Please add this exact phrase at the bottom 'Created with DALL-E'"</span>,</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  size<span class="op">=</span><span class="st">"1024x1024"</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  quality<span class="op">=</span><span class="st">"standard"</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  n<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>image_url <span class="op">=</span> response.data[<span class="dv">0</span>].url</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>image_url </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="1">
-<pre><code>'https://oaidalleapiprodscus.blob.core.windows.net/private/org-QwvrbKaSi0VeflwsDx1dYz8t/user-xeCmfMW6XAJBDsWzkXkIRsNp/img-2xf5B8J4ZbuylSvNHcSRPInx.png?st=2024-02-17T18%3A19%3A44Z&amp;se=2024-02-17T20%3A19%3A44Z&amp;sp=r&amp;sv=2021-08-06&amp;sr=b&amp;rscd=inline&amp;rsct=image/png&amp;skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&amp;sktid=a48cca56-e6da-484e-a814-9c849652bcb3&amp;skt=2024-02-17T18%3A56%3A39Z&amp;ske=2024-02-18T18%3A56%3A39Z&amp;sks=b&amp;skv=2021-08-06&amp;sig=ldgus5CfsRP6VGOW75XUf%2B2IiRF7C8e7wCXEYp3hFUY%3D'</code></pre>
-</div>
-</div>
-<p>And just like that, you have a url where you can view the generated image and download it locally. A few things to note that I found interesting:</p>
+<section id="a-new-project-migrating-to-quarto-and-exploring-openai" class="level2">
+<h2 class="anchored" data-anchor-id="a-new-project-migrating-to-quarto-and-exploring-openai">A new project, migrating to Quarto and exploring OpenAI</h2>
+<p>First, I had to include the above ChatGPT blog write-up once I read the lines “got me back into the keyboard clacking game” and “It’s like culinary amnesia”. That was just too great not to share. I am excited to kick-off a multiple-stage project leveraging Quarto, Github Actions, OpenAI, and a few other tools. So in case the above ChatGPT summary wasn’t clear, I will give a quick summary.</p>
+<p>Years ago, I started a simple personal website to save recipes my family liked. I would never remember which recipe I had used and then would scramble to try and find them again. I setup a simple process leveraging {rmarkdown}, a csv of data, and Github Actions. Fast forward a few years of not updating that process, and I started to get some security warnings from the <a href="https://github.com/mleary/cooking_recipes">old code base</a>. At that point, I decided it was time to move the basic recipe website to my personal website (here) and that meant converting it to a new format you can find <a href="../../resources/resources-cooking.html">here</a>.</p>
+<section id="initial-setup" class="level3">
+<h3 class="anchored" data-anchor-id="initial-setup">Initial Setup</h3>
+<p>My initial focus was just moving the old recipe website to my existing Quarto personal website. I wanted to keep the first iteration simple so I focused on :</p>
 <ul>
-<li><p>As of February 2024, the image will stay up for one hour per the DALL-E <a href="https://help.openai.com/en/articles/6705023-dall-e-api-faq">documentation</a>.</p></li>
-<li><p>You’ll notice that while the image outputs are impressive, the text generation was surprisingly bad. Even with direct prompts to include a specific saying, it often got the phrase wrong, misspelled words or even made up words. Some quick research confirmed it’s a common occurrence. I read some explanations for why, but I did not go deep enough to confirm exactly why. I am interested to read more on that.</p></li>
+<li><p>Instead of saving the data in a csv file in the repo, I moved the data to a Google Sheets page and accessed it with the {googlesheets4} package</p></li>
+<li><p>I upgraded the presentation from a basic table to a “fancier” one leveraging {gt} and {gtExtras}</p></li>
+<li><p>I added the new webpage as a drop down section in my existing personal website.</p></li>
 </ul>
 </section>
-<section id="the-finished-outputs" class="level1">
-<h1>The finished outputs</h1>
-<p>You can find the page I setup <a href="../../resources/resources-notes.html">here</a> until I add actual notes. And in case that happens, you can see a rough copy of the page below. I’ll note, I leveraged the <code>lightbox</code> feature with Quarto so you can click on the first image to cycle through all seven.</p>
-<section id="this-page-is-under-construction-please-bear-with-us." class="level3">
-<h3 class="anchored" data-anchor-id="this-page-is-under-construction-please-bear-with-us.">This page is under construction, please bear with us.</h3>
-<p><a href="bearwithme/bearwithme5.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme5.png" class="img-fluid"></a></p>
-<section id="obviously-i-only-need-one-image-but-i-created-six-with-openai-and-dall-e-so-wanted-to-share-them-all" class="level4">
-<h4 class="anchored" data-anchor-id="obviously-i-only-need-one-image-but-i-created-six-with-openai-and-dall-e-so-wanted-to-share-them-all">Obviously, I only need one image but I created six with OpenAI and Dall E so wanted to share them all!</h4>
-<p><a href="bearwithme/bearwithme2.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme2.png" class="img-fluid"></a></p>
-<p><a href="bearwithme/bearwithme3.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme3.png" class="img-fluid"></a></p>
-<p><a href="bearwithme/bearwithme4.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme4.png" class="img-fluid"></a></p>
-<p><a href="bearwithme/bearwithme1.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme1.png" class="img-fluid"></a></p>
-<p><a href="bearwithme/bearwithme6.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme6.png" class="img-fluid"></a></p>
-<p><a href="bearwithme/bearwithme7.png" class="lightbox" data-gallery="my-gallery"><img src="bearwithme/bearwithme7.png" class="img-fluid"></a></p>
+<section id="future-plans" class="level3">
+<h3 class="anchored" data-anchor-id="future-plans">Future plans</h3>
+<p>This was just an initial start, focusing on the basic need to move the existing website. I have a few follow-on ideas I want to explore.</p>
+<ul>
+<li><p>Leveraging OpenAI to summarize cooking websites</p></li>
+<li><p>Exploring GitHub actions to update the recipes page whenever I update the Google Sheets with recipe data</p>
+<ul>
+<li>This would be a good chance to test using secrets with GitHub actions, something I have not done</li>
+</ul></li>
+<li><p>Figure out how to make a series of posts with Quarto blog</p></li>
+</ul>
+<p>So a simple first step but I am looking forward to exploring GitHub actions and OpenAI in the coming weeks!</p>
 
 
-</section>
 </section>
 </section>
 
@@ -703,31 +646,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 

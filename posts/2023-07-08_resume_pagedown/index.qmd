@@ -4,6 +4,9 @@ description: "Creating a daynamic resume I can easily update and share with R, {
 date: "2023-07-08"
 categories: [R, pagedown]
 image: "resume.png"
+execute:
+    freeze: true
+
 ---
 
 ## Refreshing an old Post
