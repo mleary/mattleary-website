@@ -1,0 +1,53 @@
+---
+title: "A Recipe for change"
+description: "Moving a simple recipe website to Quarto while planning to leverage OpenAI Large Language Models for summarization and Github Actions for automation."
+date: "2024-01-31"
+categories: [Quarto, R, OpenAI, gt]
+image: "recipes.jpg"
+---
+
+## A ChatGPT intro
+
+Hey folks,
+
+Long time no blog, right? Well, guess what got me back into the keyboard clacking game? A combo of needing a push and stumbling onto a pretty cool project. So, here I am, ready to spill the beans on my latest coding escapade.
+
+Confession time: I've got this not-so-great habit. I cook up these awesome meals for the fam, and then, poof! Forget how to recreate the magic. It's like culinary amnesia. Ever been there?
+
+So, a while back, I threw together this simple thing to track recipes, just to keep my kitchen capers in check. Fast forward, and it's become this cool project that's dragging me back to blogging – in a good way.
+
+Stay tuned for the full scoop on how I'm leveling up my recipe game, avoiding the "What was in that again?" moments, and diving into a bit of tech fun. Quarto, Google Sheets, OpenAI magic – it's all in the mix.
+
+Catch you in the next post!
+
+Cheers, \[Your First Name\]
+
+## A new project, migrating to Quarto and exploring OpenAI
+
+First, I had to include the above ChatGPT blog write-up once I read the lines "got me back into the keyboard clacking game" and "It's like culinary amnesia". That was just too great not to share. I am excited to kick-off a multiple-stage project leveraging Quarto, Github Actions, OpenAI, and a few other tools. So in case the above ChatGPT summary wasn't clear, I will give a quick summary.
+
+Years ago, I started a simple personal website to save recipes my family liked. I would never remember which recipe I had used and then would scramble to try and find them again. I setup a simple process leveraging {rmarkdown}, a csv of data, and Github Actions. Fast forward a few years of not updating that process, and I started to get some security warnings from the [old code base](https://github.com/mleary/cooking_recipes). At that point, I decided it was time to move the basic recipe website to my personal website (here) and that meant converting it to a new format you can find [here](../../resources/resources-cooking.qmd).
+
+### Initial Setup
+
+My initial focus was just moving the old recipe website to my existing Quarto personal website. I wanted to keep the first iteration simple so I focused on :
+
+-   Instead of saving the data in a csv file in the repo, I moved the data to a Google Sheets page and accessed it with the {googlesheets4} package
+
+-   I upgraded the presentation from a basic table to a "fancier" one leveraging {gt} and {gtExtras}
+
+-   I added the new webpage as a drop down section in my existing personal website.
+
+### Future plans
+
+This was just an initial start, focusing on the basic need to move the existing website. I have a few follow-on ideas I want to explore.
+
+-  Leveraging OpenAI to summarize cooking websites
+
+-  Exploring GitHub actions to update the recipes page whenever I update the Google Sheets with recipe data
+
+    -   This would be a good chance to test using secrets with GitHub actions, something I have not done
+
+-  Figure out how to make a series of posts with Quarto blog 
+
+So a simple first step but I am looking forward to exploring GitHub actions and OpenAI in the coming weeks!

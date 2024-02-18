@@ -4,6 +4,9 @@ description: "Updating my previous {blogdown} website with RStudio and Quarto (a
 date: "2023-07-07"
 categories: [Quarto, R]
 image: "quarto-image.jpg"
+execute:
+    freeze: true
+
 ---
 
 After many months (years?) of not really touching my personal website, I am working to update my website and *truly* delve into using [quarto](https://quarto.org/) for analysis and publication. This initial post will be a short summary of my efforts to get started, document some of the resources I found and used, and a starting point for what will \*hopefully\* become a regularly updated post.

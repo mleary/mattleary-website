@@ -5,6 +5,8 @@ date: "2024-02-08"
 categories: [DALL-E, OpenAI, Gen AI, Python]
 image: "bear.png"
 lightbox: true
+execute:
+    freeze: true
 
 ---
 
