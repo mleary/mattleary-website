@@ -1,5 +1,5 @@
 # Project specific
-**/secret_stuff.py
+**/secret_keys.py
 
 #misc
 .DS_Store
