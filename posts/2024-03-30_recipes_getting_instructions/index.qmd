@@ -1,9 +1,9 @@
 ---
-title: "A Recipe for change - Creating a new recipe and image with OpenAI"
-description: "Can we create recipes my family will like?  Making a recipe for healthy banana bread with my kids."
+title: "A Recipe for change - OpenAI as a sous chef"
+description: "Can we create recipes my family will like?  Pivoting on my initial plan, I used OpenAI to generate a recipe for healthy banana bread that my kids would enjoy."
 date: "2024-03-30"
 image: "nora_image.jpg"
-categories: [Quarto, Python, OpenAI]
+categories: [Quarto, Python, OpenAI, DALL-E, GPT-4]
 include-in-header:
   - text: |
       <style>
@@ -14,16 +14,24 @@ include-in-header:
       </style>
 
 ---
-For this project, I wanted to create a recipe for healthy banana bread that my kids would enjoy. I used OpenAI to generate the recipe and ingredients list, used that output to make the recipe with my two daughters (Nora and Tess) and then we used OpenAI to generate an images of the recipe being made.  If you haven't explored the world of prompt engineering  with a 3.5 and 5.5 year old, I can't explain the strange requests you might get. Also, I can't say 3 and 5 year old, because the half year is apparently very important.
+I initially wanted to use OpenAI to summarize cooking recipes I found online, but that presented some issues with permissions and webscraping.  So instead, I pivoted and created a 'new' recipe with OpenAI directly.  This also helps address a common issue I faced, which was remembering which online recipe we previously used.
+
+First thing up on my list was a recipe for healthy banana bread that my kids would enjoy. So my goal for this exercise was:
+
+* Use OpenAI to generate the recipe and ingredients list, in a specific format 
+  * For this I used the GPT-4 model via the OpenAI API 
+* Use the generated recipe to make banana bread with my two daughters (Nora and Tess)
+* Use OpenAI to generate an images of us making the recipe.  
+  * Side Note: If you haven't explored the world of prompt engineering  with a 3.5 and 5.5 year old, I can't explain the strange requests you might get. Also, I can't say 3 and 5 year old, because the half year is apparently very important.
 
 I hope you enjoy the recipe and the images, it was a lot of fun for us to work on it together!
 I'll walk through some of the prompt engineering we explored along the way.
 
 ### Setting up the system and role prompts
 
-First step, we need to set up the system and user prompts.  The system prompt is the role of the AI system, and the user prompt is the request we are making of the AI system.  So the system prompt defines `HOW` the the AI system should respond, and the user prompt defines `WHAT` we are asking the AI to do. the system prompt can be useful if you have multiple requests and want to keep the response consistent without having to repeat the same set of instructions each time. You can also use it to define the output format, such as JSON, or to specify any other requirements for the response. Again I found this helpful since I had a specific data format I wanted.
+First step, we need to set up the system and user prompts that will control what we ask for and get back from OpenAI.  I won't go into depth on this topic here, but basically the the system prompt defines `HOW` the the AI model should respond, and the user prompt defines `WHAT` we are asking the AI model to do.
 
-In this case, we are asking the AI to generate a recipe for healthy banana bread that kids will enjoy eating, and to use sugar alternatives as much as possible, such as honey or maple syrup.
+In this case, I am giving the AI model the role of a culinary expert who specializes in creating simple but delicious meals. The user prompt is a request for a recipe for healthy banana bread that kids will enjoy eating, with a preference for using sugar alternatives like honey or maple syrup.
 
 #### Our system prompt is as follows:
 
@@ -52,7 +60,7 @@ role_user ="I need a recipe for healthy banana bread, one that kids will enjoy e
 
 Now that we have our system and user prompts set up, we can use OpenAI to generate the recipe and ingredients list for healthy banana bread. We will pass in the system and user prompts to the OpenAI API and get back a response with the generated data. We will then extract the data from the response and convert it into a Python object that we can work with.
 
-**Note: I didn't want to continually rerun the OPENAI API call, so I saved the result.  This code doesn't actually run now and I just open up the saved data file.**
+  * Note: I didn't want to continually rerun the OPENAI API call, so I saved the result.  This code doesn't actually run now and I just open up the saved json file. 
 ```{python}
 #| code-fold: true
 #| code-summary: "hide / show code"
@@ -85,17 +93,17 @@ data_dict = json.loads(response_data)
 #with open('data.json', 'w') as file:
 #    json.dump(data_dict, file)
 
-```
-
-```{python}
-#| code-fold: true
-#| code-summary: "hide / show code"
-#| code-overflow: wrap
-
-import json
-
+# Load the data from the saved file - I commented out the generation code above
 with open('./data.json', 'r') as file:
   data_dict = json.load(file)
+
+# extract the ingredients and steps from the data
+ingredients = data_dict['ingredients']
+ingredients_list = "\n".join(f"- {ingredient}" for ingredient in ingredients)
+
+steps = data_dict['steps']
+steps_list = "\n".join(f"- {step}" for step in steps)
+
 ```
 
 
@@ -107,30 +115,39 @@ And now we have the recipe and ingredients list for healthy banana bread that ki
 #| code-fold: true
 #| code-summary: "hide / show code"
 #| code-overflow: wrap
-#| 
+
+import json # need to import this since above code chunk does not execute
+
+# Load the data from the saved file - I commented out the generation code in the above code chunk
+with open('./data.json', 'r') as file:
+  data_dict = json.load(file)
+
+# extract the ingredients and steps from the data
 ingredients = data_dict['ingredients']
+ingredients_list = "\n".join(f"- {ingredient}" for ingredient in ingredients)
 
-markdown_list = "\n".join(f"- {ingredient}" for ingredient in ingredients)
 
-print(markdown_list)
+print(ingredients_list)
 ```
 
 
-### The Recipe
+### The Recipe instructions
+
 ```{python}
 #| code-fold: true
 #| code-summary: "hide / show code"
 #| code-overflow: wrap
-#| 
-ingredients = data_dict['steps']
 
-markdown_list = "\n".join(f"- {ingredient}" for ingredient in ingredients)
+steps = data_dict['steps']
+steps_list = "\n".join(f"- {step}" for step in steps)
 
-print(markdown_list)
-
+print(steps_list)
 ```
 
-I took those ingredients and recipe steps and made the recipe with my two daughters.  The result was as good as any store bought mixes or recipes we have found online.  
+
+### Making the Recipe 
+
+We took those ingredients and recipe steps and made the recipe with my two daughters.  Following the suggested process the result was as good as any store bought mixes or recipes we have found online!
 
 ### The Image Generation
 
@@ -168,11 +185,13 @@ I used Nora's prompt as image for this article.
 ![](./nora_image.jpg)
 
 
-#### Matt's image
+#### My image
 
-I also create an image, but lost the prompt.  But needless to say, it included me wearing  Tottenham Hotspur gear.
+I also create an image, but lost the prompt.  It included me wearing Tottenham Hotspur gear is the main thing I remember.
 
 ![](./matt_image.jpg)
 
 
-###
+### Total cost of exploration
+
+Looking back, the total cost to generate the recipe and images was about $0.57.  That includes multiple attempts refining my process to request the recipe and ingredients and generating 5 images with DALL-E.  I think that is a pretty good deal for a fun afternoon with my daughters.  I hope you enjoyed the recipe and images as much as we did!
