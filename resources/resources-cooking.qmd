@@ -24,7 +24,7 @@ fontawesome::fa_html_dependency()
 # Only need to use this when setting it up for the first time on a computer
 #gs4_auth()
 
-google_sheets_path <- Sys.getenv("GSHEETS_PATH")
+google_sheets_path <- 'https://docs.google.com/spreadsheets/d/10cvArLbAus_PMVRZfFh6z8MEQE2OWnzIMIVTSV-WR5c/edit?usp=sharing'
 sheet <- read_sheet(google_sheets_path)
 
 sheet <- sheet %>%
