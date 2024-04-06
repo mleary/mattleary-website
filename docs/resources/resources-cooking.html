@@ -213,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Only need to use this when setting it up for the first time on a computer</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">#gs4_auth()</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>google_sheets_path <span class="ot">&lt;-</span> <span class="fu">Sys.getenv</span>(<span class="st">"GSHEETS_PATH"</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>google_sheets_path <span class="ot">&lt;-</span> <span class="st">'https://docs.google.com/spreadsheets/d/10cvArLbAus_PMVRZfFh6z8MEQE2OWnzIMIVTSV-WR5c/edit?usp=sharing'</span></span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>sheet <span class="ot">&lt;-</span> <span class="fu">read_sheet</span>(google_sheets_path)</span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>sheet <span class="ot">&lt;-</span> sheet <span class="sc">%&gt;%</span></span>
@@ -237,24 +237,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>gt_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="qanwujkexr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="wgufiijjhr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-#qanwujkexr table {
+#wgufiijjhr table {
   font-family: Lato, system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qanwujkexr thead, #qanwujkexr tbody, #qanwujkexr tfoot, #qanwujkexr tr, #qanwujkexr td, #qanwujkexr th {
+#wgufiijjhr thead, #wgufiijjhr tbody, #wgufiijjhr tfoot, #wgufiijjhr tr, #wgufiijjhr td, #wgufiijjhr th {
   border-style: none;
 }
 
-#qanwujkexr p {
+#wgufiijjhr p {
   margin: 0;
   padding: 0;
 }
 
-#qanwujkexr .gt_table {
+#wgufiijjhr .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -280,12 +280,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#qanwujkexr .gt_caption {
+#wgufiijjhr .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qanwujkexr .gt_title {
+#wgufiijjhr .gt_title {
   color: #333333;
   font-size: 24px;
   font-weight: initial;
@@ -297,7 +297,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#qanwujkexr .gt_subtitle {
+#wgufiijjhr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -309,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#qanwujkexr .gt_heading {
+#wgufiijjhr .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -321,13 +321,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#qanwujkexr .gt_bottom_border {
+#wgufiijjhr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qanwujkexr .gt_col_headings {
+#wgufiijjhr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -342,7 +342,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#qanwujkexr .gt_col_heading {
+#wgufiijjhr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -362,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#qanwujkexr .gt_column_spanner_outer {
+#wgufiijjhr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -374,15 +374,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#qanwujkexr .gt_column_spanner_outer:first-child {
+#wgufiijjhr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qanwujkexr .gt_column_spanner_outer:last-child {
+#wgufiijjhr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qanwujkexr .gt_column_spanner {
+#wgufiijjhr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -394,11 +394,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#qanwujkexr .gt_spanner_row {
+#wgufiijjhr .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qanwujkexr .gt_group_heading {
+#wgufiijjhr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -424,7 +424,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#qanwujkexr .gt_empty_group_heading {
+#wgufiijjhr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -439,15 +439,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#qanwujkexr .gt_from_md > :first-child {
+#wgufiijjhr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qanwujkexr .gt_from_md > :last-child {
+#wgufiijjhr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qanwujkexr .gt_row {
+#wgufiijjhr .gt_row {
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 5px;
@@ -466,7 +466,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#qanwujkexr .gt_stub {
+#wgufiijjhr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 80%;
@@ -479,7 +479,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qanwujkexr .gt_stub_row_group {
+#wgufiijjhr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -493,15 +493,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#qanwujkexr .gt_row_group_first td {
+#wgufiijjhr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qanwujkexr .gt_row_group_first th {
+#wgufiijjhr .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qanwujkexr .gt_summary_row {
+#wgufiijjhr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -511,16 +511,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qanwujkexr .gt_first_summary_row {
+#wgufiijjhr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qanwujkexr .gt_first_summary_row.thick {
+#wgufiijjhr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qanwujkexr .gt_last_summary_row {
+#wgufiijjhr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -530,7 +530,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#qanwujkexr .gt_grand_summary_row {
+#wgufiijjhr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -540,7 +540,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qanwujkexr .gt_first_grand_summary_row {
+#wgufiijjhr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -550,7 +550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#qanwujkexr .gt_last_grand_summary_row_top {
+#wgufiijjhr .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -560,11 +560,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#qanwujkexr .gt_striped {
+#wgufiijjhr .gt_striped {
   background-color: #FAFAFA;
 }
 
-#qanwujkexr .gt_table_body {
+#wgufiijjhr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -573,7 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#qanwujkexr .gt_footnotes {
+#wgufiijjhr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -587,7 +587,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#qanwujkexr .gt_footnote {
+#wgufiijjhr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -596,7 +596,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qanwujkexr .gt_sourcenotes {
+#wgufiijjhr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -610,7 +610,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#qanwujkexr .gt_sourcenote {
+#wgufiijjhr .gt_sourcenote {
   font-size: 12px;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -618,63 +618,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#qanwujkexr .gt_left {
+#wgufiijjhr .gt_left {
   text-align: left;
 }
 
-#qanwujkexr .gt_center {
+#wgufiijjhr .gt_center {
   text-align: center;
 }
 
-#qanwujkexr .gt_right {
+#wgufiijjhr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qanwujkexr .gt_font_normal {
+#wgufiijjhr .gt_font_normal {
   font-weight: normal;
 }
 
-#qanwujkexr .gt_font_bold {
+#wgufiijjhr .gt_font_bold {
   font-weight: bold;
 }
 
-#qanwujkexr .gt_font_italic {
+#wgufiijjhr .gt_font_italic {
   font-style: italic;
 }
 
-#qanwujkexr .gt_super {
+#wgufiijjhr .gt_super {
   font-size: 65%;
 }
 
-#qanwujkexr .gt_footnote_marks {
+#wgufiijjhr .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qanwujkexr .gt_asterisk {
+#wgufiijjhr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qanwujkexr .gt_indent_1 {
+#wgufiijjhr .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qanwujkexr .gt_indent_2 {
+#wgufiijjhr .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qanwujkexr .gt_indent_3 {
+#wgufiijjhr .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qanwujkexr .gt_indent_4 {
+#wgufiijjhr .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qanwujkexr .gt_indent_5 {
+#wgufiijjhr .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
