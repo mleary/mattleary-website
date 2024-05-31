@@ -54,6 +54,7 @@ print(completion.choices[0].message.content)
 ```
 
 **Generated Story:**
+
 > One sunny Saturday afternoon in Richmond, Virginia, Nora and Tess were excited to enjoy the lovely weather. Decked out in their favorite colors—Nora in pink and Tess in blue—the sisters decided to be detectives and solve pretend mysteries in their neighborhood. Tess grabbed her blue magnifying glass while Nora picked up her pink notepad, and off they went!
 >
 >Their first mystery led them to Mrs. Jenkins' house. "Mrs. Jenkins can't find her pies!" exclaimed Nora. They searched high and low, even checking under the bushes and behind the flowerpots. Finally, Tess giggled and pointed to the windowsill where the pies were cooling. "Mystery solved, Detective Tess!" laughed Nora as they both high-fived each other.
@@ -101,6 +102,7 @@ print(completion.choices[0].message.content)
 ```
 
 **Generated Story:**
+
 > Nora and Tess put on their shiny astronaut helmets and big, puffy space suits. They giggled as they imagined themselves floating among the stars. Nora, who loved pink, had a bright pink stripe on her helmet, while Tess's helmet had a blue stripe. They pretended to receive an urgent message from the President, who was none other than Taylor Swift! The Sun was in trouble, and it needed their help to save the people of Earth.
 >
 >Nora decided to explore all the planets first, zooming past the red, dusty landscapes of Mars, the giant rings of Saturn, and the stormy clouds of Jupiter. She waved at the alien friends she imagined lived there. Meanwhile, Tess focused on Neptune, her favorite icy-blue planet. She loved how it had giant, swirling storms and a mysterious blue glow.
