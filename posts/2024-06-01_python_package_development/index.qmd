@@ -1,0 +1,7 @@
+---
+title: "Developing a personal python package"
+description: "After copying and pasting some OpenAI code for working with LLMs, I decided it was time to create a personal python package.  I've built R packages previously, but this was my first time building a python package."
+date: "2024-06-01"
+categories: [Python, GitHub, Software Development]
+image: "package_dev.png"
+---
