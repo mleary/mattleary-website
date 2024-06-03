@@ -5,3 +5,15 @@ date: "2024-06-01"
 categories: [Python, GitHub, Software Development]
 image: "package_dev.png"
 ---
+
+Transitioning from R to Python package development can feel like navigating uncharted waters due to the differences in structure and available tools. In R, packages like `{usethis}` and `{devtools}` provide a clear framework, but Python offers more flexibility, which can be both liberating and daunting.  This post will cover some of my experience also help document what I found for future use.
+
+## Why build a python package?
+
+## Researching examples best practices
+
+## Structure I ended up
+
+## Lessons learned
+
+## Steps for version 0.2.0
