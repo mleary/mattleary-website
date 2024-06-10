@@ -1,7 +1,7 @@
 ---
 title: "Developing a personal python package"
 description: "After copying and pasting some OpenAI code for working with LLMs, I decided it was time to create a personal python package.  I've built R packages previously, but this was my first time building a python package."
-date: "2024-06-01"
+date: "2024-06-09"
 categories: [Python, GitHub, Software Development]
 image: "package_dev.png"
 ---
@@ -10,10 +10,43 @@ Transitioning from R to Python package development can feel like navigating unch
 
 ## Why build a python package?
 
+I found myself copying and pasting code from OpenAI's GPT-3 repository to work with their language models. I also had created some helper functions for caching and logging their API calls.  
+
+Realizing that I was using the same code over and over again and that it would be more efficient to create a package.  This would allow me to reuse the code across projects and share it with others.  I also wanted to learn more about Python package development and how it differs from R package development.  With that, I set out to create my first Python package; `pyleary`.
+
 ## Researching examples best practices
+
+As I researched how to build a Python package, I found several resources that helped me understand the best practices and structure of a Python package. What was interesting to me though, is there was no clearly defined way but rather several ways. For example, I found conflicting recommendations regarding the use of `setup.py` vs `pyproject.toml` vs `setup.cfg`.  I also found conflicting advice on how to structure the package.  Some recommended a flat structure, while others recommended a nested structure.  I decided to go with a nested structure, as it seemed more organized to me.
 
 ## Structure I ended up
 
+Here is the structure I ended up with:
+
+
+```{directory}
+├── pyleary
+│   ├── .github/workflows
+|           └── build.yml    
+|   └── pyleary
+│       ├── __init__.py
+│       └── blog.py
+|   └── tests
+│       └── test_blog.py
+|   ├── .gitignore
+|   ├── LICENSE
+|   ├── README.md
+|   ├── requirements.txt
+|   └──  setup.py
+```
+
 ## Lessons learned
 
+1. Creating a wheel via GitHub Actions - I had never done this before, but successfully created a wheel and uploaded it to the GitHub release page. 
+
+2. Python project structure - Repeating myself here, but I've created modules with a repo before but this was a good intro into creating a standalone package you can import into other projects.
+
+3. Testing - I've done testing in Python before, but this was a good refresher. I will say, I created tests but they don't appear to be running properly. Will look to fix this in future iterations.
+
 ## Steps for version 0.2.0
+
+I built out an extremely basic structure, just one file `blog.py` that has helper functions for saving, logging, and reading in text.  I had copied that code over for when I was working with LLMs served via API and didn't want to make repeated calls.  Next steps will be to add more functionality and tests.  
