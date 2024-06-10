@@ -201,5 +201,47 @@
     "title": "matt_leary",
     "section": "",
     "text": "Hi!\nI am a data scientist working in the insurance industry and I enjoy building tools that help people work more efficiently. I work regularly with R and Python, but R will always be my preferred language for analysis and machine learning. I am frequently working with SQL and Git (DevOps or Github), and have experience with cloud computing such as AWS, Azure, and Databricks.\nOutside of work, I am the proud father of two tiny humans and an avid Tottenham Hotspur fan. I previously worked in public policy/public relations, and spent a few years in the Army*.\n*Fun fact, you run and workout a LOT less when no one is yelling at you to do so."
+  },
+  {
+    "objectID": "posts/2024-06-01_python_package_development/index.html",
+    "href": "posts/2024-06-01_python_package_development/index.html",
+    "title": "Developing a personal python package",
+    "section": "",
+    "text": "Transitioning from R to Python package development can feel like navigating uncharted waters due to the differences in structure and available tools. In R, packages like {usethis} and {devtools} provide a clear framework, but Python offers more flexibility, which can be both liberating and daunting. This post will cover some of my experience also help document what I found for future use."
+  },
+  {
+    "objectID": "posts/2024-06-01_python_package_development/index.html#why-build-a-python-package",
+    "href": "posts/2024-06-01_python_package_development/index.html#why-build-a-python-package",
+    "title": "Developing a personal python package",
+    "section": "Why build a python package?",
+    "text": "Why build a python package?\nI found myself copying and pasting code from OpenAI’s GPT-3 repository to work with their language models. I also had created some helper functions for caching and logging their API calls.\nRealizing that I was using the same code over and over again and that it would be more efficient to create a package. This would allow me to reuse the code across projects and share it with others. I also wanted to learn more about Python package development and how it differs from R package development. With that, I set out to create my first Python package; pyleary."
+  },
+  {
+    "objectID": "posts/2024-06-01_python_package_development/index.html#researching-examples-best-practices",
+    "href": "posts/2024-06-01_python_package_development/index.html#researching-examples-best-practices",
+    "title": "Developing a personal python package",
+    "section": "Researching examples best practices",
+    "text": "Researching examples best practices\nAs I researched how to build a Python package, I found several resources that helped me understand the best practices and structure of a Python package. What was interesting to me though, is there was no clearly defined way but rather several ways. For example, I found conflicting recommendations regarding the use of setup.py vs pyproject.toml vs setup.cfg. I also found conflicting advice on how to structure the package. Some recommended a flat structure, while others recommended a nested structure. I decided to go with a nested structure, as it seemed more organized to me."
+  },
+  {
+    "objectID": "posts/2024-06-01_python_package_development/index.html#structure-i-ended-up",
+    "href": "posts/2024-06-01_python_package_development/index.html#structure-i-ended-up",
+    "title": "Developing a personal python package",
+    "section": "Structure I ended up",
+    "text": "Structure I ended up\nHere is the structure I ended up with:\n├── pyleary\n│   ├── .github/workflows\n|           └── build.yml    \n|   └── pyleary\n│       ├── __init__.py\n│       └── blog.py\n|   └── tests\n│       └── test_blog.py\n|   ├── .gitignore\n|   ├── LICENSE\n|   ├── README.md\n|   ├── requirements.txt\n|   └──  setup.py"
+  },
+  {
+    "objectID": "posts/2024-06-01_python_package_development/index.html#lessons-learned",
+    "href": "posts/2024-06-01_python_package_development/index.html#lessons-learned",
+    "title": "Developing a personal python package",
+    "section": "Lessons learned",
+    "text": "Lessons learned\n\nCreating a wheel via GitHub Actions - I had never done this before, but successfully created a wheel and uploaded it to the GitHub release page.\nPython project structure - Repeating myself here, but I’ve created modules with a repo before but this was a good intro into creating a standalone package you can import into other projects.\nTesting - I’ve done testing in Python before, but this was a good refresher. I will say, I created tests but they don’t appear to be running properly. Will look to fix this in future iterations."
+  },
+  {
+    "objectID": "posts/2024-06-01_python_package_development/index.html#steps-for-version-0.2.0",
+    "href": "posts/2024-06-01_python_package_development/index.html#steps-for-version-0.2.0",
+    "title": "Developing a personal python package",
+    "section": "Steps for version 0.2.0",
+    "text": "Steps for version 0.2.0\nI built out an extremely basic structure, just one file blog.py that has helper functions for saving, logging, and reading in text. I had copied that code over for when I was working with LLMs served via API and didn’t want to make repeated calls. Next steps will be to add more functionality and tests."
   }
 ]
