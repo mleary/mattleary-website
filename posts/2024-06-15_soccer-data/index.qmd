@@ -1,0 +1,28 @@
+---
+title: "Planning for the 2024/2025 Premier League Season"
+description: "I want to do things with soccer data"
+date: "2024-06-15"
+categories: [Python, GitHub, Software Development]
+image: "cockrell.png"
+---
+
+
+
+```{python}
+import soccerdata as sd
+import pandas as pd
+```
+
+
+
+```{python}
+elo = sd.ClubElo()
+thfc_elo = elo.read_team_history("Tottenham")
+thfc_elo = thfc_elo.loc[thfc_elo['to'] >= '2014-08-16']
+thfc_elo.to_csv("thfc_elo.csv", index=False)
+```
+
+
+```{r}
+thfc_elo = read.csv("./posts/2024-06-15_soccer-data/thfc_elo.csv")
+```
