@@ -227,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#using-llms-to-explore-taylor-swifts-music" id="toc-using-llms-to-explore-taylor-swifts-music" class="nav-link" data-scroll-target="#using-llms-to-explore-taylor-swifts-music">Using LLMs to explore Taylor Swift’s music</a></li>
   <li><a href="#first-follow-up-test-asking-an-older-model-for-the-best-taylor-swift-song" id="toc-first-follow-up-test-asking-an-older-model-for-the-best-taylor-swift-song" class="nav-link" data-scroll-target="#first-follow-up-test-asking-an-older-model-for-the-best-taylor-swift-song">First follow up test: Asking an older model for the best Taylor Swift song</a></li>
   <li><a href="#second-follow-up-test-asking-claudes-latest-model-what-is-the-best-taylor-swift-song" id="toc-second-follow-up-test-asking-claudes-latest-model-what-is-the-best-taylor-swift-song" class="nav-link" data-scroll-target="#second-follow-up-test-asking-claudes-latest-model-what-is-the-best-taylor-swift-song">Second follow up test: Asking Claude’s latest model what is the best Taylor Swift song</a></li>
-  <li><a href="#takeways" id="toc-takeways" class="nav-link" data-scroll-target="#takeways">Takeways</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -240,24 +240,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="temperature-settings-for-llms-whats-the-deal" class="level2">
 <h2 class="anchored" data-anchor-id="temperature-settings-for-llms-whats-the-deal">Temperature settings for LLMs, what’s the deal?</h2>
-<p>Adjusting the temperature setting in large language models (LLMs) is like adjusting the creativity dial of the output. When the temperature is set low, the LLM produces more predictable and consistent responses, similar to how a careful and precise person might answer questions. On the other hand, when the temperature is set high, the LLMs become more imaginative and varied in its responses, akin to a brainstorming session where all ideas are welcome.</p>
+<p>Adjusting the temperature setting in large language models (LLMs) is essentially adjusting the creativity dial of the output. When the temperature is set low, the LLM produces more predictable and consistent responses, similar to how a careful and precise person might answer questions. On the other hand, when the temperature is set high, the LLMs become more imaginative and varied in its responses, similiar to a brainstorming session where all ideas are welcome.</p>
 <p>Imagine you ask an LLM to complete the following sentence:</p>
 <blockquote class="blockquote">
 <p>The cow jumped over the …</p>
 </blockquote>
 <p>With a lower temperature setting, you will probably get moon every time, even if you ask the question a 1,000 times. However, as you increase the temperature setting, you will still get moon many times but also fence, car, or other answers.</p>
-<p>When using LLMs at work, it is important to understand how the temperature setting impacts the responses. If you are summarizing a document multiple times (perhaps you run your process every night), users might be confused if each day a drastically different summary is presented to them. Conversely, if you are using an LLM to help generate emails or other creative content, you might want to increase the temperature setting to get more varied responses.</p>
+<p>When using LLMs at work, it is important to understand how the temperature setting impacts the responses. If you are summarizing a document multiple times (perhaps a batch process every night), users might be confused if each day a drastically different summary is presented to them. Conversely, if you are using an LLM to help generate emails or other creative content, you might want to increase the temperature setting to get more varied responses.</p>
 <p>As I increase my use Azure OpenAI services at work, these types of discussions are becoming more frequent and nuanced. This is different from when I explore using LLMs for personal projects that are more focused on creativity and exploration.</p>
 <p>I wanted to dig into temperature settings and see how they impact the responses of LLMs in more detail. Fortunately, I knew a perfect use case to test.</p>
 </section>
 <section id="using-llms-to-explore-taylor-swifts-music" class="level2">
 <h2 class="anchored" data-anchor-id="using-llms-to-explore-taylor-swifts-music">Using LLMs to explore Taylor Swift’s music</h2>
-<p>I asked different LLMs to tell me the best Taylor Swift song and see what happened as I adjust the temperature setting.</p>
+<p>I asked different LLMs to tell me the best Taylor Swift song and see how adjusting the temperature setting changed the output.</p>
 <p>First, I used Python to access one of OpenAI’s latest models, gpt-4o. I asked the LLM to tell me the best Taylor Swift song. I then ran the model at different temperature settings, ranging from 0 to 2, 200 times for each setting. My specific ask was:</p>
 <blockquote class="blockquote">
 <p>Tell me the best Taylor Swift song?</p>
 </blockquote>
-<p>I did also give the model additional instructions:</p>
+<p>I also gave the model additional instructions:</p>
 <blockquote class="blockquote">
 <p>You are a helpful assistant. When I ask a question, I am looking for a very short answer. Preferably one to four words, with no introduction and simply giving an answer. I do not want answers longer than 4 words.</p>
 </blockquote>
@@ -324,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'best_song.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>From there, I collected the responses and used R and <code>{ggplot}</code>to analyze the data. I wanted to see how the temperature settings impacted the responses. As expected, the lower the temperature setting the more consistent the responses were.</p>
+<p>From there, I collected the responses and used R and <code>{ggplot}</code>to analyze the data. I wanted to see how the temperature settings impacted the responses. As expected, at lower temperature settings the responses were more consistent.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>hide / show code</summary>
@@ -429,23 +429,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="gmplzelace" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gmplzelace table {
+<div id="bhdpgbkvyp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bhdpgbkvyp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gmplzelace thead, #gmplzelace tbody, #gmplzelace tfoot, #gmplzelace tr, #gmplzelace td, #gmplzelace th {
+#bhdpgbkvyp thead, #bhdpgbkvyp tbody, #bhdpgbkvyp tfoot, #bhdpgbkvyp tr, #bhdpgbkvyp td, #bhdpgbkvyp th {
   border-style: none;
 }
 
-#gmplzelace p {
+#bhdpgbkvyp p {
   margin: 0;
   padding: 0;
 }
 
-#gmplzelace .gt_table {
+#bhdpgbkvyp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -471,12 +471,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#gmplzelace .gt_caption {
+#bhdpgbkvyp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gmplzelace .gt_title {
+#bhdpgbkvyp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -488,7 +488,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#gmplzelace .gt_subtitle {
+#bhdpgbkvyp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -500,7 +500,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#gmplzelace .gt_heading {
+#bhdpgbkvyp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -512,13 +512,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#gmplzelace .gt_bottom_border {
+#bhdpgbkvyp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gmplzelace .gt_col_headings {
+#bhdpgbkvyp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -533,7 +533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#gmplzelace .gt_col_heading {
+#bhdpgbkvyp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -553,7 +553,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#gmplzelace .gt_column_spanner_outer {
+#bhdpgbkvyp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -565,15 +565,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#gmplzelace .gt_column_spanner_outer:first-child {
+#bhdpgbkvyp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gmplzelace .gt_column_spanner_outer:last-child {
+#bhdpgbkvyp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gmplzelace .gt_column_spanner {
+#bhdpgbkvyp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -585,11 +585,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#gmplzelace .gt_spanner_row {
+#bhdpgbkvyp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gmplzelace .gt_group_heading {
+#bhdpgbkvyp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -615,7 +615,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#gmplzelace .gt_empty_group_heading {
+#bhdpgbkvyp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -630,15 +630,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#gmplzelace .gt_from_md > :first-child {
+#bhdpgbkvyp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gmplzelace .gt_from_md > :last-child {
+#bhdpgbkvyp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gmplzelace .gt_row {
+#bhdpgbkvyp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -657,7 +657,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#gmplzelace .gt_stub {
+#bhdpgbkvyp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -670,7 +670,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#gmplzelace .gt_stub_row_group {
+#bhdpgbkvyp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -684,15 +684,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#gmplzelace .gt_row_group_first td {
+#bhdpgbkvyp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gmplzelace .gt_row_group_first th {
+#bhdpgbkvyp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gmplzelace .gt_summary_row {
+#bhdpgbkvyp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -702,16 +702,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#gmplzelace .gt_first_summary_row {
+#bhdpgbkvyp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gmplzelace .gt_first_summary_row.thick {
+#bhdpgbkvyp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gmplzelace .gt_last_summary_row {
+#bhdpgbkvyp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -721,7 +721,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#gmplzelace .gt_grand_summary_row {
+#bhdpgbkvyp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -731,7 +731,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#gmplzelace .gt_first_grand_summary_row {
+#bhdpgbkvyp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -741,7 +741,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#gmplzelace .gt_last_grand_summary_row_top {
+#bhdpgbkvyp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -751,11 +751,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#gmplzelace .gt_striped {
+#bhdpgbkvyp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gmplzelace .gt_table_body {
+#bhdpgbkvyp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -764,7 +764,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#gmplzelace .gt_footnotes {
+#bhdpgbkvyp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -778,7 +778,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#gmplzelace .gt_footnote {
+#bhdpgbkvyp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -787,7 +787,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#gmplzelace .gt_sourcenotes {
+#bhdpgbkvyp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -801,7 +801,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#gmplzelace .gt_sourcenote {
+#bhdpgbkvyp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -809,63 +809,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#gmplzelace .gt_left {
+#bhdpgbkvyp .gt_left {
   text-align: left;
 }
 
-#gmplzelace .gt_center {
+#bhdpgbkvyp .gt_center {
   text-align: center;
 }
 
-#gmplzelace .gt_right {
+#bhdpgbkvyp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gmplzelace .gt_font_normal {
+#bhdpgbkvyp .gt_font_normal {
   font-weight: normal;
 }
 
-#gmplzelace .gt_font_bold {
+#bhdpgbkvyp .gt_font_bold {
   font-weight: bold;
 }
 
-#gmplzelace .gt_font_italic {
+#bhdpgbkvyp .gt_font_italic {
   font-style: italic;
 }
 
-#gmplzelace .gt_super {
+#bhdpgbkvyp .gt_super {
   font-size: 65%;
 }
 
-#gmplzelace .gt_footnote_marks {
+#bhdpgbkvyp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gmplzelace .gt_asterisk {
+#bhdpgbkvyp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gmplzelace .gt_indent_1 {
+#bhdpgbkvyp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gmplzelace .gt_indent_2 {
+#bhdpgbkvyp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gmplzelace .gt_indent_3 {
+#bhdpgbkvyp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gmplzelace .gt_indent_4 {
+#bhdpgbkvyp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gmplzelace .gt_indent_5 {
+#bhdpgbkvyp .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -942,12 +942,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>At the lowest setting, the model returned the exact same response for all 200 completions. As the temperature setting increased, the number of unique responses increased. I was surprised at the response of <code>All Too well</code> being the best song given I wasn’t too familiar with that song, but after some informal research realized it was critically acclaimed.</p>
+<p>At the lowest setting, the model returned the exact same response for all 200 completions. As the temperature setting increased, the number of unique responses increased. I was surprised at the response of <code>All Too well</code> being the best song given I wasn’t too familiar with that song, but after some informal research (asking my wife and friends)realized it was critically acclaimed when it was re-released as a 10-minute version.</p>
 <p>Using this latest model as a baseline, I wanted to see how different models might respond to the same question.</p>
 </section>
 <section id="first-follow-up-test-asking-an-older-model-for-the-best-taylor-swift-song" class="level2">
 <h2 class="anchored" data-anchor-id="first-follow-up-test-asking-an-older-model-for-the-best-taylor-swift-song">First follow up test: Asking an older model for the best Taylor Swift song</h2>
-<p>I next asked an “older” model version the same quesiton. This was GPT-3.5 Turbo which released in March 2023 and trained on data up to September 2021.</p>
+<p>I next asked an “older” model version the same question. For this, I used GPT-3.5 Turbo which released in March 2023 and trained on data up to September 2021.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>hide / show code</summary>
@@ -1015,7 +1015,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p><img src="gpt-3.5-turbo.png" class="img-fluid"></p>
-<p>I immediately saw this model had more variation, including a funny response of <code>No Tears Left to Cry Ariana Grande</code> as the best Taylor Swift song. I again looked at the most common responses at each temperature setting.</p>
+<p>I immediately saw this model had more variation, including an odd response of <code>No Tears Left to Cry  by Ariana Grande</code> as the best Taylor Swift song (yes, the response included saying it was an Ariana Grande song). I again looked at the most common responses at each temperature setting.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>hide / show code</summary>
@@ -1065,23 +1065,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="avwehdjqlq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#avwehdjqlq table {
+<div id="gbdfdctukq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gbdfdctukq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#avwehdjqlq thead, #avwehdjqlq tbody, #avwehdjqlq tfoot, #avwehdjqlq tr, #avwehdjqlq td, #avwehdjqlq th {
+#gbdfdctukq thead, #gbdfdctukq tbody, #gbdfdctukq tfoot, #gbdfdctukq tr, #gbdfdctukq td, #gbdfdctukq th {
   border-style: none;
 }
 
-#avwehdjqlq p {
+#gbdfdctukq p {
   margin: 0;
   padding: 0;
 }
 
-#avwehdjqlq .gt_table {
+#gbdfdctukq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1107,12 +1107,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#avwehdjqlq .gt_caption {
+#gbdfdctukq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#avwehdjqlq .gt_title {
+#gbdfdctukq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1124,7 +1124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#avwehdjqlq .gt_subtitle {
+#gbdfdctukq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1136,7 +1136,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#avwehdjqlq .gt_heading {
+#gbdfdctukq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1148,13 +1148,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#avwehdjqlq .gt_bottom_border {
+#gbdfdctukq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#avwehdjqlq .gt_col_headings {
+#gbdfdctukq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1169,7 +1169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#avwehdjqlq .gt_col_heading {
+#gbdfdctukq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1189,7 +1189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#avwehdjqlq .gt_column_spanner_outer {
+#gbdfdctukq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1201,15 +1201,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#avwehdjqlq .gt_column_spanner_outer:first-child {
+#gbdfdctukq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#avwehdjqlq .gt_column_spanner_outer:last-child {
+#gbdfdctukq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#avwehdjqlq .gt_column_spanner {
+#gbdfdctukq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1221,11 +1221,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#avwehdjqlq .gt_spanner_row {
+#gbdfdctukq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#avwehdjqlq .gt_group_heading {
+#gbdfdctukq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1251,7 +1251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#avwehdjqlq .gt_empty_group_heading {
+#gbdfdctukq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1266,15 +1266,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#avwehdjqlq .gt_from_md > :first-child {
+#gbdfdctukq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#avwehdjqlq .gt_from_md > :last-child {
+#gbdfdctukq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#avwehdjqlq .gt_row {
+#gbdfdctukq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1293,7 +1293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#avwehdjqlq .gt_stub {
+#gbdfdctukq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1306,7 +1306,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#avwehdjqlq .gt_stub_row_group {
+#gbdfdctukq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1320,15 +1320,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#avwehdjqlq .gt_row_group_first td {
+#gbdfdctukq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#avwehdjqlq .gt_row_group_first th {
+#gbdfdctukq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#avwehdjqlq .gt_summary_row {
+#gbdfdctukq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1338,16 +1338,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#avwehdjqlq .gt_first_summary_row {
+#gbdfdctukq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#avwehdjqlq .gt_first_summary_row.thick {
+#gbdfdctukq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#avwehdjqlq .gt_last_summary_row {
+#gbdfdctukq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1357,7 +1357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#avwehdjqlq .gt_grand_summary_row {
+#gbdfdctukq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1367,7 +1367,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#avwehdjqlq .gt_first_grand_summary_row {
+#gbdfdctukq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1377,7 +1377,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#avwehdjqlq .gt_last_grand_summary_row_top {
+#gbdfdctukq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1387,11 +1387,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#avwehdjqlq .gt_striped {
+#gbdfdctukq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#avwehdjqlq .gt_table_body {
+#gbdfdctukq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1400,7 +1400,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#avwehdjqlq .gt_footnotes {
+#gbdfdctukq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1414,7 +1414,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#avwehdjqlq .gt_footnote {
+#gbdfdctukq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1423,7 +1423,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#avwehdjqlq .gt_sourcenotes {
+#gbdfdctukq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1437,7 +1437,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#avwehdjqlq .gt_sourcenote {
+#gbdfdctukq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1445,63 +1445,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#avwehdjqlq .gt_left {
+#gbdfdctukq .gt_left {
   text-align: left;
 }
 
-#avwehdjqlq .gt_center {
+#gbdfdctukq .gt_center {
   text-align: center;
 }
 
-#avwehdjqlq .gt_right {
+#gbdfdctukq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#avwehdjqlq .gt_font_normal {
+#gbdfdctukq .gt_font_normal {
   font-weight: normal;
 }
 
-#avwehdjqlq .gt_font_bold {
+#gbdfdctukq .gt_font_bold {
   font-weight: bold;
 }
 
-#avwehdjqlq .gt_font_italic {
+#gbdfdctukq .gt_font_italic {
   font-style: italic;
 }
 
-#avwehdjqlq .gt_super {
+#gbdfdctukq .gt_super {
   font-size: 65%;
 }
 
-#avwehdjqlq .gt_footnote_marks {
+#gbdfdctukq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#avwehdjqlq .gt_asterisk {
+#gbdfdctukq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#avwehdjqlq .gt_indent_1 {
+#gbdfdctukq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#avwehdjqlq .gt_indent_2 {
+#gbdfdctukq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#avwehdjqlq .gt_indent_3 {
+#gbdfdctukq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#avwehdjqlq .gt_indent_4 {
+#gbdfdctukq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#avwehdjqlq .gt_indent_5 {
+#gbdfdctukq .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1633,7 +1633,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>This older model did not rate <code>All Too Well</code> as highly as the newer model. This was interesting to me as the older model was trained on data up to September 2021, so it did not have access to the 10 minute version of <code>All Too Well</code> which was released in November 2021 and was critically acclaimed. It was a good reminder that different models can have access to similar data but arrive at different conclusions based on how they are built and the impact of the language we use with LLMs (in this case, what does the best mean?).</p>
+<p>This older model did not rate <code>All Too Well</code> as highly as the newer model. This was interesting as the older model was trained on data up to September 2021, so it did not have access to the 10 minute version of <code>All Too Well</code> which was released in November 2021 and was critically acclaimed. Additionally, you can clearly see this older model had some odd outputs at higher temperatures.</p>
 </section>
 <section id="second-follow-up-test-asking-claudes-latest-model-what-is-the-best-taylor-swift-song" class="level2">
 <h2 class="anchored" data-anchor-id="second-follow-up-test-asking-claudes-latest-model-what-is-the-best-taylor-swift-song">Second follow up test: Asking Claude’s latest model what is the best Taylor Swift song</h2>
@@ -1691,7 +1691,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'best_song_claude.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Immediately what stood out was this model was able to produce valid results at all temperatures. I didn’t mention it, but the gpt models all hallucinated so much at the highest temperature setting that I had to throw out the results. These answer weren’t just wrong (like listing an Arianna Grande song), but they were nonsensical. Some include json formatted data, foreign languages, and other oddities. C</p>
+<p>Immediately what stood out was this model was able to produce valid results at all temperatures. I didn’t mention it, but the gpt models all hallucinated at the highest temperature setting that I had to throw out the results. These answer weren’t just wrong (like listing an Arianna Grande song), but they were nonsensical. Some include json formatted data, foreign languages, and other oddities. Claude returned valid responses at all temperatures.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>hide / show code</summary>
@@ -1785,23 +1785,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="ecwicjmmtt" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ecwicjmmtt table {
+<div id="luekyaftgc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#luekyaftgc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ecwicjmmtt thead, #ecwicjmmtt tbody, #ecwicjmmtt tfoot, #ecwicjmmtt tr, #ecwicjmmtt td, #ecwicjmmtt th {
+#luekyaftgc thead, #luekyaftgc tbody, #luekyaftgc tfoot, #luekyaftgc tr, #luekyaftgc td, #luekyaftgc th {
   border-style: none;
 }
 
-#ecwicjmmtt p {
+#luekyaftgc p {
   margin: 0;
   padding: 0;
 }
 
-#ecwicjmmtt .gt_table {
+#luekyaftgc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1827,12 +1827,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#ecwicjmmtt .gt_caption {
+#luekyaftgc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ecwicjmmtt .gt_title {
+#luekyaftgc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1844,7 +1844,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#ecwicjmmtt .gt_subtitle {
+#luekyaftgc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1856,7 +1856,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#ecwicjmmtt .gt_heading {
+#luekyaftgc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1868,13 +1868,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ecwicjmmtt .gt_bottom_border {
+#luekyaftgc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ecwicjmmtt .gt_col_headings {
+#luekyaftgc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1889,7 +1889,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ecwicjmmtt .gt_col_heading {
+#luekyaftgc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1909,7 +1909,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ecwicjmmtt .gt_column_spanner_outer {
+#luekyaftgc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1921,15 +1921,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#ecwicjmmtt .gt_column_spanner_outer:first-child {
+#luekyaftgc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ecwicjmmtt .gt_column_spanner_outer:last-child {
+#luekyaftgc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ecwicjmmtt .gt_column_spanner {
+#luekyaftgc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1941,11 +1941,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#ecwicjmmtt .gt_spanner_row {
+#luekyaftgc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ecwicjmmtt .gt_group_heading {
+#luekyaftgc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1971,7 +1971,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#ecwicjmmtt .gt_empty_group_heading {
+#luekyaftgc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1986,15 +1986,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#ecwicjmmtt .gt_from_md > :first-child {
+#luekyaftgc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ecwicjmmtt .gt_from_md > :last-child {
+#luekyaftgc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ecwicjmmtt .gt_row {
+#luekyaftgc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2013,7 +2013,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ecwicjmmtt .gt_stub {
+#luekyaftgc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2026,7 +2026,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ecwicjmmtt .gt_stub_row_group {
+#luekyaftgc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2040,15 +2040,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#ecwicjmmtt .gt_row_group_first td {
+#luekyaftgc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ecwicjmmtt .gt_row_group_first th {
+#luekyaftgc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ecwicjmmtt .gt_summary_row {
+#luekyaftgc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2058,16 +2058,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ecwicjmmtt .gt_first_summary_row {
+#luekyaftgc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ecwicjmmtt .gt_first_summary_row.thick {
+#luekyaftgc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ecwicjmmtt .gt_last_summary_row {
+#luekyaftgc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2077,7 +2077,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ecwicjmmtt .gt_grand_summary_row {
+#luekyaftgc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2087,7 +2087,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ecwicjmmtt .gt_first_grand_summary_row {
+#luekyaftgc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2097,7 +2097,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#ecwicjmmtt .gt_last_grand_summary_row_top {
+#luekyaftgc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2107,11 +2107,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ecwicjmmtt .gt_striped {
+#luekyaftgc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ecwicjmmtt .gt_table_body {
+#luekyaftgc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2120,7 +2120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ecwicjmmtt .gt_footnotes {
+#luekyaftgc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2134,7 +2134,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ecwicjmmtt .gt_footnote {
+#luekyaftgc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2143,7 +2143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ecwicjmmtt .gt_sourcenotes {
+#luekyaftgc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2157,7 +2157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ecwicjmmtt .gt_sourcenote {
+#luekyaftgc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2165,63 +2165,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ecwicjmmtt .gt_left {
+#luekyaftgc .gt_left {
   text-align: left;
 }
 
-#ecwicjmmtt .gt_center {
+#luekyaftgc .gt_center {
   text-align: center;
 }
 
-#ecwicjmmtt .gt_right {
+#luekyaftgc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ecwicjmmtt .gt_font_normal {
+#luekyaftgc .gt_font_normal {
   font-weight: normal;
 }
 
-#ecwicjmmtt .gt_font_bold {
+#luekyaftgc .gt_font_bold {
   font-weight: bold;
 }
 
-#ecwicjmmtt .gt_font_italic {
+#luekyaftgc .gt_font_italic {
   font-style: italic;
 }
 
-#ecwicjmmtt .gt_super {
+#luekyaftgc .gt_super {
   font-size: 65%;
 }
 
-#ecwicjmmtt .gt_footnote_marks {
+#luekyaftgc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ecwicjmmtt .gt_asterisk {
+#luekyaftgc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ecwicjmmtt .gt_indent_1 {
+#luekyaftgc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ecwicjmmtt .gt_indent_2 {
+#luekyaftgc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ecwicjmmtt .gt_indent_3 {
+#luekyaftgc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ecwicjmmtt .gt_indent_4 {
+#luekyaftgc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ecwicjmmtt .gt_indent_5 {
+#luekyaftgc .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2322,9 +2322,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="takeways" class="level2">
-<h2 class="anchored" data-anchor-id="takeways">Takeways</h2>
-<p>Far from a scientific approach but this did help me better understand how temperature impacts <strong>short</strong> LLM responses. I would like to try this again but perhaps looking at how the responses vary with longer answers.</p>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This was far from a scientific approach, but it did help me better understand how temperature impacts <strong>short</strong> LLM responses. For a future post, I want to try this again but look at how the responses vary with longer answers.</p>
 
 
 </section>
