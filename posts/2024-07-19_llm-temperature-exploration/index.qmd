@@ -9,7 +9,7 @@ image: "gpt-4o.png"
 
 ## Temperature settings for LLMs, what's the deal?
 
-Adjusting the temperature setting in large language models (LLMs) is like adjusting the creativity dial of the output. When the temperature is set low, the LLM produces more predictable and consistent responses, similar to how a careful and precise person might answer questions.  On the other hand, when the temperature is set high, the LLMs become more imaginative and varied in its responses, akin to a brainstorming session where all ideas are welcome. 
+Adjusting the temperature setting in large language models (LLMs) is essentially adjusting the creativity dial of the output. When the temperature is set low, the LLM produces more predictable and consistent responses, similar to how a careful and precise person might answer questions.  On the other hand, when the temperature is set high, the LLMs become more imaginative and varied in its responses, similiar to a brainstorming session where all ideas are welcome. 
 
 Imagine you ask an LLM to complete the following sentence:
 
@@ -17,8 +17,7 @@ Imagine you ask an LLM to complete the following sentence:
 
 With a lower temperature setting, you will probably get moon every time, even if you ask the question a 1,000 times. However, as you increase the temperature setting, you will still get moon many times but also fence, car, or other answers.
 
-
-When using LLMs at work, it is important to understand how the temperature setting impacts the responses. If you are summarizing a document multiple times (perhaps you run your process every night), users might be confused if each day a drastically different summary is presented to them. Conversely, if you are using an LLM to help generate emails or other creative content, you might want to increase the temperature setting to get more varied responses.
+When using LLMs at work, it is important to understand how the temperature setting impacts the responses. If you are summarizing a document multiple times (perhaps a batch process every night), users might be confused if each day a drastically different summary is presented to them. Conversely, if you are using an LLM to help generate emails or other creative content, you might want to increase the temperature setting to get more varied responses.
 
 As I increase my use Azure OpenAI services at work, these types of discussions are becoming more frequent and nuanced.  This is different from when I explore using LLMs for personal projects that are more focused on creativity and exploration.  
 
@@ -28,13 +27,13 @@ As I increase my use Azure OpenAI services at work, these types of discussions a
 
 ## Using LLMs to explore Taylor Swift's music
 
-I asked different LLMs to tell me the best Taylor Swift song and see what happened as I adjust the temperature setting.
+I asked different LLMs to tell me the best Taylor Swift song and see how adjusting the temperature setting changed the output.
 
 First, I used Python to access one of OpenAI's latest models, gpt-4o. I asked the LLM to tell me the best Taylor Swift song. I then ran the model  at different temperature settings, ranging from 0 to 2, 200 times for each setting.  My specific ask was:
 
 > Tell me the best Taylor Swift song?
 
-I did also give the model additional instructions:
+I also gave the model additional instructions:
 
 > You are a helpful assistant. When I ask a question, I am looking for a very short answer. Preferably one to four words, with no introduction and simply giving an answer.  I do not want answers longer than 4 words.
 
@@ -111,7 +110,7 @@ df = pd.DataFrame(outputs)
 df.to_csv('best_song.csv', index=False)
 ```
 
-From there, I collected the responses and used R and `{ggplot}`to analyze the data. I wanted to see how the temperature settings impacted the responses.  As expected, the lower the temperature setting the more consistent the responses were.  
+From there, I collected the responses and used R and `{ggplot}`to analyze the data. I wanted to see how the temperature settings impacted the responses.  As expected, at lower temperature settings the responses were more consistent.  
 
 
 ```{r warning=FALSE, message=FALSE}
@@ -231,14 +230,14 @@ df_gt %>%
 
 ```
 
-At the lowest setting, the model returned the exact same response for all 200 completions.  As the temperature setting increased, the number of unique responses increased.  I was surprised at the response of `All Too well` being the best song given I wasn't too familiar with that song, but after some informal research realized it was critically acclaimed.
+At the lowest setting, the model returned the exact same response for all 200 completions.  As the temperature setting increased, the number of unique responses increased.  I was surprised at the response of `All Too well` being the best song given I wasn't too familiar with that song, but after some informal research  (asking my wife and friends)realized it was critically acclaimed when it was re-released as a 10-minute version.
 
 Using this latest model as a baseline, I wanted to see how different models might respond to the same question.
 
 
 ## First follow up test: Asking an older model for the best Taylor Swift song
 
-I next asked an "older" model version the same quesiton.  This was GPT-3.5 Turbo which released in March 2023 and trained on data up to September 2021.
+I next asked an "older" model version the same question.  For this, I used GPT-3.5 Turbo which released in March 2023 and trained on data up to September 2021.
 
 
 ```{python}
@@ -321,7 +320,7 @@ ggsave("gpt-3.5-turbo.png", plot = p, width = 13, height = 8, units = "in", dpi 
 ![](gpt-3.5-turbo.png)
 
 
-I immediately saw this model had more variation, including a funny response of `No Tears Left to Cry Ariana Grande` as the best Taylor Swift song.   I again looked at the most common responses at each temperature setting.
+I immediately saw this model had more variation, including an odd response of `No Tears Left to Cry  by Ariana Grande` as the best Taylor Swift song (yes, the response included saying it was an Ariana Grande song).   I again looked at the most common responses at each temperature setting.
 
 ```{r warning=FALSE, message=FALSE}
 #| code-fold: True
@@ -377,7 +376,7 @@ df_gt %>%
 ```
 
 
-This older model did not rate `All Too Well` as highly as the newer model.  This was interesting to me as the older model was trained on data up to September 2021, so it did not have access to the 10 minute version of `All Too Well` which was released in November 2021 and was critically acclaimed.  It was a good reminder that different models can have access to similar data but arrive at different conclusions based on how they are built and the impact of the language we use with LLMs (in this case, what does the best mean?).
+This older model did not rate `All Too Well` as highly as the newer model.  This was interesting as the older model was trained on data up to September 2021, so it did not have access to the 10 minute version of `All Too Well` which was released in November 2021 and was critically acclaimed.  Additionally, you can clearly see this older model had some odd outputs at higher temperatures.
 
 ## Second follow up test: Asking Claude's latest model what is the best Taylor Swift song
 
@@ -440,7 +439,7 @@ df.to_csv('best_song_claude.csv', index=False)
 
 ```
 
- Immediately what stood out was this model was able to produce valid results at all temperatures. I didn't mention it, but the gpt models all hallucinated so much at the highest temperature setting that I had to throw out the results.  These answer weren't just wrong (like listing an Arianna Grande song), but they were nonsensical. Some include json formatted data, foreign languages, and other oddities.  C
+ Immediately what stood out was this model was able to produce valid results at all temperatures. I didn't mention it, but the gpt models all hallucinated at the highest temperature setting that I had to throw out the results.  These answer weren't just wrong (like listing an Arianna Grande song), but they were nonsensical. Some include json formatted data, foreign languages, and other oddities.  Claude returned valid responses at all temperatures.
 
 ```{r}
 #| code-fold: True
@@ -546,6 +545,6 @@ df_gt %>%
 ```
 
 
-## Takeways
+## Conclusion
 
-Far from a scientific approach but this did help me better understand how temperature impacts **short** LLM responses. I would like to try this again but perhaps looking at how the responses vary with longer answers.
+This was far from a scientific approach, but it did help me better understand how temperature impacts **short** LLM responses. For a future post, I want to try this again but look at how the responses vary with longer answers.
