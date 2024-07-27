@@ -70,6 +70,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-L8T0KEN7J4"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-L8T0KEN7J4', { 'anonymize_ip': true});
+</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -217,7 +226,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="a-new-project-migrating-to-quarto-and-exploring-openai" class="level2">
 <h2 class="anchored" data-anchor-id="a-new-project-migrating-to-quarto-and-exploring-openai">A new project, migrating to Quarto and exploring OpenAI</h2>
 <p>First, I had to include the above ChatGPT blog write-up once I read the lines “got me back into the keyboard clacking game” and “It’s like culinary amnesia”. That was just too great not to share. I am excited to kick-off a multiple-stage project leveraging Quarto, Github Actions, OpenAI, and a few other tools. So in case the above ChatGPT summary wasn’t clear, I will give a quick summary.</p>
-<p>Years ago, I started a simple personal website to save recipes my family liked. I would never remember which recipe I had used and then would scramble to try and find them again. I setup a simple process leveraging {rmarkdown}, a csv of data, and Github Actions. Fast forward a few years of not updating that process, and I started to get some security warnings from the <a href="https://github.com/mleary/cooking_recipes">old code base</a>. At that point, I decided it was time to move the basic recipe website to my personal website (here) and that meant converting it to a new format you can find <a href="../../resources/resources-cooking.html">here</a>.</p>
+<p>Years ago, I started a simple personal website to save recipes my family liked. I would never remember which recipe I had used and then would scramble to try and find them again. I setup a simple process leveraging {rmarkdown}, a csv of data, and Github Actions. Fast forward a few years of not updating that process, and I started to get some security warnings from the <a href="https://github.com/mleary/cooking_recipes">old code base</a>. At that point, I decided it was time to move the basic recipe website to my personal website (here) and that meant converting it to a new format you can find <a href="../../resources/resources-cooking.qmd">here</a>.</p>
 <section id="initial-setup" class="level3">
 <h3 class="anchored" data-anchor-id="initial-setup">Initial Setup</h3>
 <p>My initial focus was just moving the old recipe website to my existing Quarto personal website. I wanted to keep the first iteration simple so I focused on :</p>
