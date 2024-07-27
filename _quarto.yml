@@ -4,6 +4,7 @@ project:
 website:
   favicon: images/favicon-website.png
   title: "matt_leary"
+  google-analytics: "G-L8T0KEN7J4"
   navbar:
     title: matt_leary
     logo: images/logo.png
